@@ -1,5 +1,5 @@
+@extends('layouts.app')
 
-@extends('adminlte::page')
 @section('template_title')
     Estudio
 @endsection
@@ -18,7 +18,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('estudios.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Crear Asignatura') }}
+                                  {{ __('Create New') }}
                                 </a>
                               </div>
                         </div>
@@ -38,6 +38,8 @@
                                         
 										<th>Sigla</th>
 										<th>Materia</th>
+										<th>Horast</th>
+										<th>Horasp</th>
 
                                         <th></th>
                                     </tr>
@@ -49,14 +51,16 @@
                                             
 											<td>{{ $estudio->Sigla }}</td>
 											<td>{{ $estudio->Materia }}</td>
+											<td>{{ $estudio->Horast }}</td>
+											<td>{{ $estudio->Horasp }}</td>
 
                                             <td>
                                                 <form action="{{ route('estudios.destroy',$estudio->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('estudios.show',$estudio->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('estudios.edit',$estudio->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('estudios.show',$estudio->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('estudios.edit',$estudio->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
                                             </td>
                                         </tr>

@@ -39,9 +39,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('estudios.index') }}">{{ __('estudios') }}</a>
                                 </li> 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('prueba.index') }}">{{ __('pruebas') }}</a>
-                                </li> 
+                                
                                
                                
                     </ul>

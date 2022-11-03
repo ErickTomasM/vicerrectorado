@@ -17,14 +17,17 @@
 <body>
     
 @foreach ($designacions as $designacion)
-
-Potosí 27 de octubre de 2022 <br>
-<text>{{ $designacion->FechaDesignacion }}</text>
-Código  no entender<br>
-Señor <br>
-Titulo PENDIENTE <text style="text-transform: uppercase;">{{ $designacion->docente_id }} </text><br>
+    
+Potosí 
+<text>{{ $designacion->FechaDesignacion }}</text><br>
+Código  no entender<br> 
+Señor <br> {{ $designacion->docente->Nombres }} 
+           {{ $designacion->docente->ApellidoPaterno }}
+           {{ $designacion->docente->ApellidoMaterno }}<br>
+Titulo <br>
+ <text style="text-transform: uppercase;">{{ $designacion->docente->Titulo }} </text><br>
 Presente <br>
-Distinguido Titulo PENDIENTE<br><br>
+Distinguido Sr.<br><br>
 Por Resolución del Honorable Consejo Facultativo de la Facultad N°<text> {{ $designacion->Resolucion }} </text>/2022 
 nos permitimos comunicarle que en su condición de <text style="text-transform: uppercase;">{{ $designacion->TipoDocente }}</text>
 de la carrera //NOMBRE  
@@ -37,10 +40,9 @@ a su cargo las siguientes asignaturas<br>
 PENDIENTE VINCULAR CON PLAN DE ESTUDIOS 
 
 <div class="page-break"></div>
-
+    
 @endforeach
-    
-    
+      
 
 </body>
 </html>

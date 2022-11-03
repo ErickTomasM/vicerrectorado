@@ -6,10 +6,9 @@
             {{ Form::text('horario_id', $designacion->horario_id, ['class' => 'form-control' . ($errors->has('horario_id') ? ' is-invalid' : ''), 'placeholder' => 'Horario Id']) }}
             {!! $errors->first('horario_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
-       
         <div class="form-group">
-            {{ Form::label('docente') }}
-            {{ Form::select('docente_id', $docentes, $designacion->docente_id, ['class' => 'form-control' . ($errors->has('docente_id') ? ' is-invalid' : ''), 'placeholder' => 'Eliaja un Docente']) }}
+            {{ Form::label('docente_id') }}
+            {{ Form::text('docente_id', $designacion->docente_id, ['class' => 'form-control' . ($errors->has('docente_id') ? ' is-invalid' : ''), 'placeholder' => 'Docente Id']) }}
             {!! $errors->first('docente_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -38,6 +37,11 @@
             {!! $errors->first('Facultad', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
+            {{ Form::label('Carrera') }}
+            {{ Form::text('Carrera', $designacion->Carrera, ['class' => 'form-control' . ($errors->has('Carrera') ? ' is-invalid' : ''), 'placeholder' => 'Carrera']) }}
+            {!! $errors->first('Carrera', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
             {{ Form::label('TipoDocente') }}
             {{ Form::text('TipoDocente', $designacion->TipoDocente, ['class' => 'form-control' . ($errors->has('TipoDocente') ? ' is-invalid' : ''), 'placeholder' => 'Tipodocente']) }}
             {!! $errors->first('TipoDocente', '<div class="invalid-feedback">:message</div>') !!}
@@ -48,28 +52,23 @@
             {!! $errors->first('Gestion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
+            {{ Form::label('Semestre') }}
+            {{ Form::text('Semestre', $designacion->Semestre, ['class' => 'form-control' . ($errors->has('Semestre') ? ' is-invalid' : ''), 'placeholder' => 'Semestre']) }}
+            {!! $errors->first('Semestre', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
             {{ Form::label('Convocatoria') }}
             {{ Form::text('Convocatoria', $designacion->Convocatoria, ['class' => 'form-control' . ($errors->has('Convocatoria') ? ' is-invalid' : ''), 'placeholder' => 'Convocatoria']) }}
             {!! $errors->first('Convocatoria', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('FechaDesignacion') }}
-            {{ Form::text('FechaDesignacion', $designacion->FechaDesignacion, ['class' => 'form-control' . ($errors->has('FechaDesignacion') ? ' is-invalid' : ''), 'placeholder' => 'Fechadesignacion']) }}
+            {{ Form::date('FechaDesignacion', $designacion->FechaDesignacion, ['class' => 'form-control' . ($errors->has('FechaDesignacion') ? ' is-invalid' : ''), 'placeholder' => 'Fechadesignacion']) }}
             {!! $errors->first('FechaDesignacion', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('Asignaturas') }}
-            {{ Form::text('Asignaturas', $designacion->Asignaturas, ['class' => 'form-control' . ($errors->has('Asignaturas') ? ' is-invalid' : ''), 'placeholder' => 'Asignaturas']) }}
-            {!! $errors->first('Asignaturas', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('CargaHoraria') }}
-            {{ Form::text('CargaHoraria', $designacion->CargaHoraria, ['class' => 'form-control' . ($errors->has('CargaHoraria') ? ' is-invalid' : ''), 'placeholder' => 'Cargahoraria']) }}
-            {!! $errors->first('CargaHoraria', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </div>

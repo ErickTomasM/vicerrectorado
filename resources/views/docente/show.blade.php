@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title"> Mostrar Docente</span>
+                            <span class="card-title">Show Docente</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('docentes.index') }}"> Atras</a>
+                            <a class="btn btn-primary" href="{{ route('docentes.index') }}"> Back</a>
                         </div>
                     </div>
 
@@ -39,6 +39,10 @@
                         <div class="form-group">
                             <strong>Telefono:</strong>
                             {{ $docente->Telefono }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Titulo:</strong>
+                            {{ $docente->Titulo }}
                         </div>
 
                     </div>

@@ -15,12 +15,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property $Dictamen
  * @property $NumeroCarta
  * @property $Facultad
+ * @property $Carrera
  * @property $TipoDocente
  * @property $Gestion
+ * @property $Semestre
  * @property $Convocatoria
  * @property $FechaDesignacion
- * @property $Asignaturas
- * @property $CargaHoraria
  * @property $created_at
  * @property $updated_at
  *
@@ -42,12 +42,12 @@ class Designacion extends Model
 		'Dictamen' => 'required',
 		'NumeroCarta' => 'required',
 		'Facultad' => 'required',
+		'Carrera' => 'required',
 		'TipoDocente' => 'required',
 		'Gestion' => 'required',
+		'Semestre' => 'required',
 		'Convocatoria' => 'required',
 		'FechaDesignacion' => 'required',
-		'Asignaturas' => 'required',
-		'CargaHoraria' => 'required',
     ];
 
     protected $perPage = 20;
@@ -57,7 +57,7 @@ class Designacion extends Model
      *
      * @var array
      */
-    protected $fillable = ['horario_id','docente_id','estudio_id','Resolucion','Dictamen','NumeroCarta','Facultad','TipoDocente','Gestion','Convocatoria','FechaDesignacion','Asignaturas','CargaHoraria'];
+    protected $fillable = ['horario_id','docente_id','estudio_id','Resolucion','Dictamen','NumeroCarta','Facultad','Carrera','TipoDocente','Gestion','Semestre','Convocatoria','FechaDesignacion'];
 
 
     /**

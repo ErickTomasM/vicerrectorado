@@ -6,6 +6,7 @@ use App\Models\Designacion;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\Docente;
+use App\Models\Estudio;
 use DB;
 /**
  * Class DesignacionController
@@ -44,10 +45,11 @@ class DesignacionController extends Controller
     {
         $designacion = new Designacion();
 
-        $docentes = Docente::pluck('Nombres', 'ApellidoPaterno', 'ApellidoMaterno', 'id');
+        $docentes = Docente::pluck('Nombres','ApellidoPaterno','ApellidoMaterno', 'id');
+        $estudios = Estudio::pluck('Materia', 'id');
 
     
-        return view('designacion.create', compact('designacion', 'docentes'));
+        return view('designacion.create', compact('designacion', 'docentes', 'estudios'));
     }
 
     /**

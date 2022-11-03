@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title"> Plan de Estudios</span>
+                            <span class="card-title">Show Estudio</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('estudios.index') }}"> Atras</a>
+                            <a class="btn btn-primary" href="{{ route('estudios.index') }}"> Back</a>
                         </div>
                     </div>
 
@@ -27,6 +27,14 @@
                         <div class="form-group">
                             <strong>Materia:</strong>
                             {{ $estudio->Materia }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Horast:</strong>
+                            {{ $estudio->Horast }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Horasp:</strong>
+                            {{ $estudio->Horasp }}
                         </div>
 
                     </div>

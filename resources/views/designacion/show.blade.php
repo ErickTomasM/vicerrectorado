@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Mostrar Designaciones</span>
+                            <span class="card-title">Show Designacion</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('designacions.index') }}"> Atras</a>
+                            <a class="btn btn-primary" href="{{ route('designacions.index') }}"> Back</a>
                         </div>
                     </div>
 
@@ -49,6 +49,10 @@
                             {{ $designacion->Facultad }}
                         </div>
                         <div class="form-group">
+                            <strong>Carrera:</strong>
+                            {{ $designacion->Carrera }}
+                        </div>
+                        <div class="form-group">
                             <strong>Tipodocente:</strong>
                             {{ $designacion->TipoDocente }}
                         </div>
@@ -57,20 +61,16 @@
                             {{ $designacion->Gestion }}
                         </div>
                         <div class="form-group">
+                            <strong>Semestre:</strong>
+                            {{ $designacion->Semestre }}
+                        </div>
+                        <div class="form-group">
                             <strong>Convocatoria:</strong>
                             {{ $designacion->Convocatoria }}
                         </div>
                         <div class="form-group">
                             <strong>Fechadesignacion:</strong>
                             {{ $designacion->FechaDesignacion }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Asignaturas:</strong>
-                            {{ $designacion->Asignaturas }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cargahoraria:</strong>
-                            {{ $designacion->CargaHoraria }}
                         </div>
 
                     </div>

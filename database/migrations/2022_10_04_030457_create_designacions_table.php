@@ -23,12 +23,12 @@ return new class extends Migration
             $table->string('Dictamen');
             $table->string('NumeroCarta');
             $table->string('Facultad');
+            $table->string('Carrera');
             $table->string('TipoDocente');
             $table->string('Gestion');
+            $table->string('Semestre');
             $table->string('Convocatoria');
-            $table->string('FechaDesignacion');
-            $table->string('Asignaturas');
-            $table->string('CargaHoraria');
+            $table->date('FechaDesignacion')->date_format('dd, FF, YY');
             $table->timestamps();
             $table->foreign('horario_id')->references('id')->on('horarios');
             $table->foreign('docente_id')->references('id')->on('docentes');

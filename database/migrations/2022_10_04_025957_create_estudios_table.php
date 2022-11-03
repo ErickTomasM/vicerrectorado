@@ -19,6 +19,8 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('Sigla');
             $table->string('Materia');
+            $table->integer('Horast');
+            $table->integer('Horasp');
             $table->timestamps();
         });
     }

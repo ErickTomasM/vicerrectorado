@@ -48,7 +48,7 @@ class EstudioController extends Controller
         $estudio = Estudio::create($request->all());
 
         return redirect()->route('estudios.index')
-            ->with('success', 'Asignatura creada exitosamente');
+            ->with('success', 'Estudio created successfully.');
     }
 
     /**
@@ -91,7 +91,7 @@ class EstudioController extends Controller
         $estudio->update($request->all());
 
         return redirect()->route('estudios.index')
-            ->with('success', 'Asignatura actualiza exitosamente');
+            ->with('success', 'Estudio updated successfully');
     }
 
     /**
@@ -104,6 +104,6 @@ class EstudioController extends Controller
         $estudio = Estudio::find($id)->delete();
 
         return redirect()->route('estudios.index')
-            ->with('success', 'Asignatura elimina exitosamente');
+            ->with('success', 'Estudio deleted successfully');
     }
 }

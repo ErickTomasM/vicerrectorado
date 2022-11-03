@@ -10,9 +10,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property $id
  * @property $Sigla
  * @property $Materia
+ * @property $Horast
+ * @property $Horasp
  * @property $created_at
  * @property $updated_at
  *
+ * @property Designacion[] $designacions
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -22,6 +25,8 @@ class Estudio extends Model
     static $rules = [
 		'Sigla' => 'required',
 		'Materia' => 'required',
+		'Horast' => 'required',
+		'Horasp' => 'required',
     ];
 
     protected $perPage = 20;
@@ -31,8 +36,16 @@ class Estudio extends Model
      *
      * @var array
      */
-    protected $fillable = ['Sigla','Materia'];
+    protected $fillable = ['Sigla','Materia','Horast','Horasp'];
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function designacions()
+    {
+        return $this->hasMany('App\Models\Designacion', 'estudio_id', 'id');
+    }
+    
 
 }

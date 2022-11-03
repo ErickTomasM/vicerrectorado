@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('ApellidoMaterno');
             $table->string('ci');
             $table->string('Telefono');
+            $table->string('Titulo');
+            
             $table->timestamps();
         });
     }

@@ -1,5 +1,5 @@
-
 @extends('adminlte::page')
+
 @section('template_title')
     Create Docente
 @endsection

@@ -1,4 +1,3 @@
-
 @extends('adminlte::page')
 @section('template_title')
     Designacion
@@ -18,7 +17,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('designacions.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Crear Desgnacion') }}
+                                  {{ __('Create New') }}
                                 </a>
                               </div>
                         </div>
@@ -37,18 +36,18 @@
                                         <th>No</th>
                                         
 										<th>Horario Id</th>
-										<th>Docente</th>
+										<th>Docente Id</th>
 										<th>Estudio Id</th>
 										<th>Resolucion</th>
 										<th>Dictamen</th>
 										<th>Numerocarta</th>
 										<th>Facultad</th>
+										<th>Carrera</th>
 										<th>Tipodocente</th>
 										<th>Gestion</th>
+										<th>Semestre</th>
 										<th>Convocatoria</th>
 										<th>Fechadesignacion</th>
-										<th>Asignaturas</th>
-										<th>Cargahoraria</th>
 
                                         <th></th>
                                     </tr>
@@ -61,29 +60,28 @@
 											<td>{{ $designacion->horario_id }}</td>
 											<td>
                                                 {{ $designacion->docente->Nombres }}
-                                                {{ $designacion->docente->ApellidoPaterno }}
-                                                {{ $designacion->docente->ApellidoMaterno }}
+                                                 {{ $designacion->docente->ApellidoPaterno }}
+                                                 {{ $designacion->docente->ApellidoMaterno }}
                                             </td>
 											<td>{{ $designacion->estudio_id }}</td>
 											<td>{{ $designacion->Resolucion }}</td>
 											<td>{{ $designacion->Dictamen }}</td>
 											<td>{{ $designacion->NumeroCarta }}</td>
 											<td>{{ $designacion->Facultad }}</td>
+											<td>{{ $designacion->Carrera }}</td>
 											<td>{{ $designacion->TipoDocente }}</td>
 											<td>{{ $designacion->Gestion }}</td>
+											<td>{{ $designacion->Semestre }}</td>
 											<td>{{ $designacion->Convocatoria }}</td>
 											<td>{{ $designacion->FechaDesignacion }}</td>
-											<td>{{ $designacion->Asignaturas }}</td>
-											<td>{{ $designacion->CargaHoraria }}</td>
 
                                             <td>
                                                 <form action="{{ route('designacions.destroy',$designacion->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-warning " href="{{ route('designacions.pdf',$designacion->id) }}"><i class="fa fa-fw fa-eye"></i> PDF</a>
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('designacions.show',$designacion->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('designacions.edit',$designacion->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('designacions.show',$designacion->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('designacions.edit',$designacion->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
                                             </td>
                                         </tr>

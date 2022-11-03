@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $ApellidoMaterno
  * @property $ci
  * @property $Telefono
+ * @property $Titulo
  * @property $created_at
  * @property $updated_at
  *
@@ -30,6 +31,7 @@ class Docente extends Model
 		'ApellidoMaterno' => 'required',
 		'ci' => 'required',
 		'Telefono' => 'required',
+		'Titulo' => 'required',
     ];
 
     protected $perPage = 20;
@@ -39,7 +41,7 @@ class Docente extends Model
      *
      * @var array
      */
-    protected $fillable = ['Nombres','ApellidoPaterno','ApellidoMaterno','ci','Telefono'];
+    protected $fillable = ['Nombres','ApellidoPaterno','ApellidoMaterno','ci','Telefono','Titulo'];
 
 
     /**
