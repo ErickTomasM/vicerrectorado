@@ -36,3 +36,5 @@ Route::resource('estudios', App\Http\Controllers\EstudioController::class);
 Route::resource('designacions', App\Http\Controllers\DesignacionController::class);
 Route::resource('reasignacions', App\Http\Controllers\ReasignacionController::class);
 Route::resource('horarios', App\Http\Controllers\HorarioController::class);
+Route::resource('titulares', App\Http\Controllers\TitulareController::class);
+Route::resource('extraordinarios', App\Http\Controllers\ExtraordinarioController::class);

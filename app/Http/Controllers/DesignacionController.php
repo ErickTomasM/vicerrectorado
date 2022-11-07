@@ -45,7 +45,7 @@ class DesignacionController extends Controller
     {
         $designacion = new Designacion();
 
-        $docentes = Docente::pluck('Nombres','ApellidoPaterno','ApellidoMaterno', 'id');
+        $docentes = Docente::all('Nombres','id');
         $estudios = Estudio::pluck('Materia', 'id');
 
     
