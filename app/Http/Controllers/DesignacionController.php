@@ -45,11 +45,13 @@ class DesignacionController extends Controller
     {
         $designacion = new Designacion();
 
-        $docentes = Docente::all('Nombres','id');
+        $docentes = Docente::pluck('Nombres','id');
+        $docenteAp = Docente::pluck('ApellidoPaterno','id');
+
         $estudios = Estudio::pluck('Materia', 'id');
 
     
-        return view('designacion.create', compact('designacion', 'docentes', 'estudios'));
+        return view('designacion.create', compact('designacion', 'docentes','docenteAp', 'estudios'));
     }
 
     /**

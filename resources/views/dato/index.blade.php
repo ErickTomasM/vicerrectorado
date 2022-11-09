@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Extraordinario
+    Dato
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Extraordinario') }}
+                                {{ __('Dato') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('extraordinarios.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('datos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,28 +36,32 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Docente Id</th>
-										<th>Dato Id</th>
-										<th>Tipodocente</th>
-										<th>Convocatoria</th>
+										<th>Tipo</th>
+										<th>Tiempo</th>
+										<th>Dato01</th>
+										<th>Dato02</th>
+										<th>Dato03</th>
+										<th>Dato04</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($extraordinarios as $extraordinario)
+                                    @foreach ($datos as $dato)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $extraordinario->docente_id }}</td>
-											<td>{{ $extraordinario->dato_id }}</td>
-											<td>{{ $extraordinario->TipoDocente }}</td>
-											<td>{{ $extraordinario->Convocatoria }}</td>
+											<td>{{ $dato->Tipo }}</td>
+											<td>{{ $dato->Tiempo }}</td>
+											<td>{{ $dato->Dato01 }}</td>
+											<td>{{ $dato->Dato02 }}</td>
+											<td>{{ $dato->Dato03 }}</td>
+											<td>{{ $dato->Dato04 }}</td>
 
                                             <td>
-                                                <form action="{{ route('extraordinarios.destroy',$extraordinario->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('extraordinarios.show',$extraordinario->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('extraordinarios.edit',$extraordinario->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('datos.destroy',$dato->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('datos.show',$dato->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('datos.edit',$dato->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
@@ -70,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $extraordinarios->links() !!}
+                {!! $datos->links() !!}
             </div>
         </div>
     </div>

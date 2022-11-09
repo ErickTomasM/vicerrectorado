@@ -3,8 +3,13 @@
         
         <div class="form-group">
             {{ Form::label('docente_id') }}
-            {{ Form::select('docente_id',$extraordinarios, $extraordinario->docente_id, ['class' => 'form-control' . ($errors->has('docente_id') ? ' is-invalid' : ''), 'placeholder' => 'Docente Id']) }}
+            {{ Form:: select('docente_id','$extraordinarios', $extraordinario->docente_id, ['class' => 'form-control' . ($errors->has('docente_id') ? ' is-invalid' : ''), 'placeholder' => 'Docente Id']) }}
             {!! $errors->first('docente_id', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('dato_id') }}
+            {{ Form::text('dato_id', $extraordinario->dato_id, ['class' => 'form-control' . ($errors->has('dato_id') ? ' is-invalid' : ''), 'placeholder' => 'Dato Id']) }}
+            {!! $errors->first('dato_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('TipoDocente') }}

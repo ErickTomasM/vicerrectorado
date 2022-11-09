@@ -25,6 +25,10 @@
                             {{ $extraordinario->docente_id }}
                         </div>
                         <div class="form-group">
+                            <strong>Dato Id:</strong>
+                            {{ $extraordinario->dato_id }}
+                        </div>
+                        <div class="form-group">
                             <strong>Tipodocente:</strong>
                             {{ $extraordinario->TipoDocente }}
                         </div>

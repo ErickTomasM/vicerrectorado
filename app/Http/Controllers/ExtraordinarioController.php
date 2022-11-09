@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Docente;
 use App\Models\Extraordinario;
-use App\Models\Estudio;
+use App\Models\Docente;
 use Illuminate\Http\Request;
 
 /**
@@ -34,9 +33,8 @@ class ExtraordinarioController extends Controller
     public function create()
     {
         $extraordinario = new Extraordinario();
-        $extraordinarios = Docente::all('Nombres','ApellidoPaterno','ApellidoMaterno', 'id');
-        
-        return view('extraordinario.create', compact('extraordinario', 'extraordinarios'));
+       // $docentesE = Docente::pluck('Nombres','id');
+        return view('extraordinario.create', compact('extraordinario'));
     }
 
     /**

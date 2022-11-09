@@ -8,7 +8,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('Seleccione un Docente') }}
-            {{ Form::select('docente_id',$docentes, $designacion->docente_id, ['class' => 'form-control' . ($errors->has('docente_id') ? ' is-invalid' : ''), 'placeholder' => 'Seleccione un Docente']) }}
+            {{ Form::select('docente_id', $docentes, $designacion->docente_id, ['class' => 'form-control' . ($errors->has('docente_id') ? ' is-invalid' : ''), 'placeholder' => 'Seleccione un Docente']) }}
             {!! $errors->first('docente_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
