@@ -19,13 +19,13 @@ return new class extends Migration
             
             $table->bigIncrements('id');
             $table->unsignedBigInteger('docente_id');
-            $table->unsignedBigInteger('dato_id');
-            $table->enum('TipoDocente', ['Extraordinario Interino','Extraordinario Sin Continuidad','Invitado','Contratado']);
+            
+            $table->enum('TiposDocente', ['Extraordinario Interino','Invitado']);
             $table->enum('Convocatoria', ['Primera Convocatoria', 'Segunda Convocatoria','Tercera Convocatoria', 'Por Invitacion']);
             
             #$table->foreign('designacion_id')->references('id')->on('designacions');
             $table->foreign('docente_id')->references('id')->on('docentes');
-            $table->foreign('dato_id')->references('id')->on('datos');
+            
             $table->timestamps();
         });
     }

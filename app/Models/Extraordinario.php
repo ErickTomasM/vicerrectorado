@@ -7,14 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Extraordinario
  *
+ * @property $id
  * @property $docente_id
- * @property $dato_id
- * @property $TipoDocente
+ * @property $TiposDocente
  * @property $Convocatoria
  * @property $created_at
  * @property $updated_at
  *
- * @property Dato $dato
  * @property Docente $docente
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -24,8 +23,7 @@ class Extraordinario extends Model
     
     static $rules = [
 		'docente_id' => 'required',
-		'dato_id' => 'required',
-		'TipoDocente' => 'required',
+		'TiposDocente' => 'required',
 		'Convocatoria' => 'required',
     ];
 
@@ -36,17 +34,9 @@ class Extraordinario extends Model
      *
      * @var array
      */
-    protected $fillable = ['docente_id','dato_id','TipoDocente','Convocatoria'];
+    protected $fillable = ['docente_id','TiposDocente','Convocatoria'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function dato()
-    {
-        return $this->hasOne('App\Models\Dato', 'id', 'dato_id');
-    }
-    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */

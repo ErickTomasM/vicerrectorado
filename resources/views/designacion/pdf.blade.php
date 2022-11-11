@@ -46,3 +46,31 @@ PENDIENTE VINCULAR CON PLAN DE ESTUDIOS
 
 </body>
 </html>
+/*
+Potosí, 28 de junio de 202…
+CITE: UATF/DCE/CAR. 002-A/2022
+
+
+
+Señor Lic.
+Nombre del Docente
+Presente
+
+De nuestra mayor distinción:
+Por Resoluciones del Consejo Facultativo de la Facultad de Ciencias Económicas Financieras y Administrativas Nº 134/2022, nos permitimos comunicarle que por una mejor administración académica se le ha reasignado sus materias para el presente semestre académico I/2022 en su condición de DOCENTE ORDINARIO TITULAR a tiempo Completo de la Carrera Administración de Empresas, en concordancia con el Art. 20 del Reglamento del Régimen Académico Docente de la Universidad Boliviana, teniendo a su cargo las siguientes asignaturas:
+SIGLA          ASIGNATURA          GRUPO            HORAS/SEMANA
+Para coordinar horarios y otros aspectos inherentes a sus funciones académicas, se le insinúa pasar por la Dirección de Carrera.
+Con este grato motivo, saludamos a usted con las consideraciones más distinguidas.
+Atentamente,
+
+
+
+
+Nombre decano
+DECANO FACULTAD
+Vo.Bo.
+
+M.B.A. Victor Hugo Villegas Choquevillca 
+                                                                                                             VICERRECTOR U.A.T.F.
+C.c: VR. - DPER - Arch.
+*/

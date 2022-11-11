@@ -37,8 +37,8 @@
                                         <th>No</th>
                                         
 										<th>Docente Id</th>
-										<th>Dato Id</th>
-										<th>Tipodocente</th>
+
+										<th>Tiposdocente</th>
 										<th>Convocatoria</th>
 
                                         <th></th>
@@ -49,9 +49,14 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $extraordinario->docente_id }}</td>
-											<td>{{ $extraordinario->dato_id }}</td>
-											<td>{{ $extraordinario->TipoDocente }}</td>
+											<td>
+                                                    {{ $extraordinario->docente->Nombres }}
+                                                    {{ $extraordinario->docente->ApellidoPaterno }}
+                                                    {{ $extraordinario->docente->ApellidoMaterno }}
+                                                    
+
+                                                    </td>
+											<td>{{ $extraordinario->TiposDocente }}</td>
 											<td>{{ $extraordinario->Convocatoria }}</td>
 
                                             <td>

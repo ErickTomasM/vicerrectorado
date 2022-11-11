@@ -32,10 +32,17 @@ class ExtraordinarioController extends Controller
      */
     public function create()
     {
+        
         $extraordinario = new Extraordinario();
+        $z = Docente::pluck('Nombres', 'id');
+        
+        $y = ["Elija Una Opción","Primera Covocatoria","Segunda Convocatoria", "Tercera Convocatoria", "Por Invitacion"];
+        $x = ["Elija Una Opción","Extraordinario Interino", "Invitado"];
        // $docentesE = Docente::pluck('Nombres','id');
-        return view('extraordinario.create', compact('extraordinario'));
+       
+        return view('extraordinario.create', compact('extraordinario', 'z','x','y'));
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -75,8 +82,11 @@ class ExtraordinarioController extends Controller
     public function edit($id)
     {
         $extraordinario = Extraordinario::find($id);
+        $z = Docente::pluck('Nombres', 'id');
+        $y = ["Elija una Opcion","Primera Covocatoria","Segunda Convocatoria", "Tercera Convocatoria", "Por Invitacion"];
+        $x = ["Elija una Opcion", "Extraordinario Interino", "Invitado"];
 
-        return view('extraordinario.edit', compact('extraordinario'));
+        return view('extraordinario.edit', compact('extraordinario','z','y','x'));
     }
 
     /**

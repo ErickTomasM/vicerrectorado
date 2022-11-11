@@ -3,22 +3,18 @@
         
         <div class="form-group">
             {{ Form::label('docente_id') }}
-            {{ Form:: select('docente_id','$extraordinarios', $extraordinario->docente_id, ['class' => 'form-control' . ($errors->has('docente_id') ? ' is-invalid' : ''), 'placeholder' => 'Docente Id']) }}
+            {{ Form::select('docente_id',$z, $extraordinario->docente_id, ['class' => 'form-control' . ($errors->has('docente_id') ? ' is-invalid' : ''), 'placeholder' => 'Docente Id']) }}
             {!! $errors->first('docente_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+
         <div class="form-group">
-            {{ Form::label('dato_id') }}
-            {{ Form::text('dato_id', $extraordinario->dato_id, ['class' => 'form-control' . ($errors->has('dato_id') ? ' is-invalid' : ''), 'placeholder' => 'Dato Id']) }}
-            {!! $errors->first('dato_id', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('TipoDocente') }}
-            {{ Form::text('TipoDocente', $extraordinario->TipoDocente, ['class' => 'form-control' . ($errors->has('TipoDocente') ? ' is-invalid' : ''), 'placeholder' => 'Tipodocente']) }}
-            {!! $errors->first('TipoDocente', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('TiposDocente') }}
+            {{ Form::select('TiposDocente',$x, $extraordinario->TiposDocente, ['class' => 'form-control' . ($errors->has('TiposDocente') ? ' is-invalid' : ''), 'placeholder' => 'Tiposdocente']) }}
+            {!! $errors->first('TiposDocente', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('Convocatoria') }}
-            {{ Form::text('Convocatoria', $extraordinario->Convocatoria, ['class' => 'form-control' . ($errors->has('Convocatoria') ? ' is-invalid' : ''), 'placeholder' => 'Convocatoria']) }}
+            {{ Form::select('Convocatoria',$y, $extraordinario->Convocatoria, ['class' => 'form-control' . ($errors->has('Convocatoria') ? ' is-invalid' : ''), 'placeholder' => 'Convocatoria']) }}
             {!! $errors->first('Convocatoria', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
