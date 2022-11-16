@@ -1,4 +1,5 @@
-@extends('adminlte::page')
+@extends('layouts.app')
+
 @section('template_title')
     Designacion
 @endsection
@@ -35,19 +36,15 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Horario Id</th>
-										<th>Docente Id</th>
-										<th>Estudio Id</th>
+										<th>Fechadesignacion</th>
 										<th>Resolucion</th>
 										<th>Dictamen</th>
 										<th>Numerocarta</th>
 										<th>Facultad</th>
 										<th>Carrera</th>
-										<th>Tipodocente</th>
 										<th>Gestion</th>
 										<th>Semestre</th>
 										<th>Convocatoria</th>
-										<th>Fechadesignacion</th>
 
                                         <th></th>
                                     </tr>
@@ -57,23 +54,15 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $designacion->horario_id }}</td>
-											<td>
-                                                {{ $designacion->docente->Nombres }}
-                                                 {{ $designacion->docente->ApellidoPaterno }}
-                                                 {{ $designacion->docente->ApellidoMaterno }}
-                                            </td>
-											<td>{{ $designacion->estudio_id }}</td>
+											<td>{{ $designacion->FechaDesignacion }}</td>
 											<td>{{ $designacion->Resolucion }}</td>
 											<td>{{ $designacion->Dictamen }}</td>
 											<td>{{ $designacion->NumeroCarta }}</td>
 											<td>{{ $designacion->Facultad }}</td>
 											<td>{{ $designacion->Carrera }}</td>
-											<td>{{ $designacion->TipoDocente }}</td>
 											<td>{{ $designacion->Gestion }}</td>
 											<td>{{ $designacion->Semestre }}</td>
 											<td>{{ $designacion->Convocatoria }}</td>
-											<td>{{ $designacion->FechaDesignacion }}</td>
 
                                             <td>
                                                 <form action="{{ route('designacions.destroy',$designacion->id) }}" method="POST">

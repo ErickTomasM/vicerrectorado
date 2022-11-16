@@ -3,19 +3,28 @@
         
         <div class="form-group">
             {{ Form::label('docente_id') }}
-            {{ Form::select('docente_id',$z, $extraordinario->docente_id, ['class' => 'form-control' . ($errors->has('docente_id') ? ' is-invalid' : ''), 'placeholder' => 'Docente Id']) }}
+            {{ Form::select('docente_id',$extra,  $extraordinario->docente_id, ['class' => 'form-control' . ($errors->has('docente_id') ? ' is-invalid' : ''), 'placeholder' => 'Docente Id']) }}
             {!! $errors->first('docente_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
-
+        <div class="form-group">
+            {{ Form::label('designacion_id') }}
+            {{ Form::select('designacion_id',$resol, $extraordinario->designacion_id, ['class' => 'form-control' . ($errors->has('designacion_id') ? ' is-invalid' : ''), 'placeholder' => 'Designacion Id']) }}
+            {!! $errors->first('designacion_id', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('estudio_id') }}
+            {{ Form::select('estudio_id',$plan, $extraordinario->estudio_id, ['class' => 'form-control' . ($errors->has('estudio_id') ? ' is-invalid' : ''), 'placeholder' => 'Estudio Id']) }}
+            {!! $errors->first('estudio_id', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
         <div class="form-group">
             {{ Form::label('TiposDocente') }}
-            {{ Form::select('TiposDocente',$x, $extraordinario->TiposDocente, ['class' => 'form-control' . ($errors->has('TiposDocente') ? ' is-invalid' : ''), 'placeholder' => 'Tiposdocente']) }}
+            {{ Form::select('TiposDocente',$t, $extraordinario->TiposDocente, ['class' => 'form-control' . ($errors->has('TiposDocente') ? ' is-invalid' : ''), 'placeholder' => 'Tiposdocente']) }}
             {!! $errors->first('TiposDocente', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('Convocatoria') }}
-            {{ Form::select('Convocatoria',$y, $extraordinario->Convocatoria, ['class' => 'form-control' . ($errors->has('Convocatoria') ? ' is-invalid' : ''), 'placeholder' => 'Convocatoria']) }}
-            {!! $errors->first('Convocatoria', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('Dedicacion') }}
+            {{ Form::select('Dedicacion',$d, $extraordinario->Dedicacion, ['class' => 'form-control' . ($errors->has('Dedicacion') ? ' is-invalid' : ''), 'placeholder' => 'Dedicacion']) }}
+            {!! $errors->first('Dedicacion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
     </div>

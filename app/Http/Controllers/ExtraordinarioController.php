@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Designacion;
 use App\Models\Extraordinario;
 use App\Models\Docente;
+use App\Models\Estudio;
 use Illuminate\Http\Request;
 
 /**
@@ -34,13 +36,16 @@ class ExtraordinarioController extends Controller
     {
         
         $extraordinario = new Extraordinario();
-        $z = Docente::pluck('Nombres', 'id');
         
-        $y = ["Elija Una Opción","Primera Covocatoria","Segunda Convocatoria", "Tercera Convocatoria", "Por Invitacion"];
-        $x = ["Elija Una Opción","Extraordinario Interino", "Invitado"];
+        $extra = Docente::pluck('Nombres', 'id');
+        $resol = Designacion::pluck('Resolucion', 'id');
+        $plan = Estudio::pluck('Materia', 'id');
+        $c = ["Elija una Opcion","Primera Covocatoria","Segunda Convocatoria", "Tercera Convocatoria", "Por Invitacion"];
+        $t = ["Elija una Opcion", "Extraordinario Interino", "Invitado"];
+        $d = ["Elija una Opcion", "A Tiempo Completo", "A Tiempo Horario"];
        // $docentesE = Docente::pluck('Nombres','id');
        
-        return view('extraordinario.create', compact('extraordinario', 'z','x','y'));
+        return view('extraordinario.create', compact('extraordinario','extra','resol','plan','c','t','d'));
     }
     
 
@@ -82,11 +87,12 @@ class ExtraordinarioController extends Controller
     public function edit($id)
     {
         $extraordinario = Extraordinario::find($id);
-        $z = Docente::pluck('Nombres', 'id');
-        $y = ["Elija una Opcion","Primera Covocatoria","Segunda Convocatoria", "Tercera Convocatoria", "Por Invitacion"];
-        $x = ["Elija una Opcion", "Extraordinario Interino", "Invitado"];
+        $extra = Docente::pluck('Nombres', 'id');
+        $c = ["Elija una Opcion","Primera Covocatoria","Segunda Convocatoria", "Tercera Convocatoria", "Por Invitacion"];
+        $t = ["Elija una Opcion", "Extraordinario Interino", "Invitado"];
+        $d = ["Elija una Opcion", "A Tiempo Completo", "A Tiempo Horario"];
 
-        return view('extraordinario.edit', compact('extraordinario','z','y','x'));
+        return view('extraordinario.edit', compact('extraordinario','extra','c','t','d'));
     }
 
     /**

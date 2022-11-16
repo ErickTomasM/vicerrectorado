@@ -37,9 +37,10 @@
                                         <th>No</th>
                                         
 										<th>Docente Id</th>
-
+										<th>Designacion Id</th>
+										<th>Estudio Id</th>
 										<th>Tiposdocente</th>
-										<th>Convocatoria</th>
+										<th>Dedicacion</th>
 
                                         <th></th>
                                     </tr>
@@ -49,15 +50,11 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>
-                                                    {{ $extraordinario->docente->Nombres }}
-                                                    {{ $extraordinario->docente->ApellidoPaterno }}
-                                                    {{ $extraordinario->docente->ApellidoMaterno }}
-                                                    
-
-                                                    </td>
+											<td>{{ $extraordinario->docente_id }}</td>
+											<td>{{ $extraordinario->designacion_id }}</td>
+											<td>{{ $extraordinario->estudio_id }}</td>
 											<td>{{ $extraordinario->TiposDocente }}</td>
-											<td>{{ $extraordinario->Convocatoria }}</td>
+											<td>{{ $extraordinario->Dedicacion }}</td>
 
                                             <td>
                                                 <form action="{{ route('extraordinarios.destroy',$extraordinario->id) }}" method="POST">

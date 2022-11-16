@@ -25,12 +25,20 @@
                             {{ $extraordinario->docente_id }}
                         </div>
                         <div class="form-group">
+                            <strong>Designacion Id:</strong>
+                            {{ $extraordinario->designacion_id }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Estudio Id:</strong>
+                            {{ $extraordinario->estudio_id }}
+                        </div>
+                        <div class="form-group">
                             <strong>Tiposdocente:</strong>
                             {{ $extraordinario->TiposDocente }}
                         </div>
                         <div class="form-group">
-                            <strong>Convocatoria:</strong>
-                            {{ $extraordinario->Convocatoria }}
+                            <strong>Dedicacion:</strong>
+                            {{ $extraordinario->Dedicacion }}
                         </div>
 
                     </div>

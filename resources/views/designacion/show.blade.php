@@ -21,16 +21,8 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Horario Id:</strong>
-                            {{ $designacion->horario_id }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Docente Id:</strong>
-                            {{ $designacion->docente_id }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Estudio Id:</strong>
-                            {{ $designacion->estudio_id }}
+                            <strong>Fechadesignacion:</strong>
+                            {{ $designacion->FechaDesignacion }}
                         </div>
                         <div class="form-group">
                             <strong>Resolucion:</strong>
@@ -53,10 +45,6 @@
                             {{ $designacion->Carrera }}
                         </div>
                         <div class="form-group">
-                            <strong>Tipodocente:</strong>
-                            {{ $designacion->TipoDocente }}
-                        </div>
-                        <div class="form-group">
                             <strong>Gestion:</strong>
                             {{ $designacion->Gestion }}
                         </div>
@@ -67,10 +55,6 @@
                         <div class="form-group">
                             <strong>Convocatoria:</strong>
                             {{ $designacion->Convocatoria }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Fechadesignacion:</strong>
-                            {{ $designacion->FechaDesignacion }}
                         </div>
 
                     </div>
