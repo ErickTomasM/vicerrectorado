@@ -25,12 +25,24 @@
                             {{ $titulare->docente_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Tipodocente:</strong>
-                            {{ $titulare->TipoDocente }}
+                            <strong>Designacion Id:</strong>
+                            {{ $titulare->designacion_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Convocatori:</strong>
-                            {{ $titulare->Convocatori }}
+                            <strong>Estudio Id:</strong>
+                            {{ $titulare->estudio_id }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Tiposdocente:</strong>
+                            {{ $titulare->TiposDocente }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Dedicacion:</strong>
+                            {{ $titulare->Dedicacion }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Convocatoria:</strong>
+                            {{ $titulare->Convocatoria }}
                         </div>
 
                     </div>

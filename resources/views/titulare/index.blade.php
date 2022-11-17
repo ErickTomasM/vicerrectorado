@@ -37,8 +37,11 @@
                                         <th>No</th>
                                         
 										<th>Docente Id</th>
-										<th>Tipodocente</th>
-										<th>Convocatori</th>
+										<th>Designacion Id</th>
+										<th>Estudio Id</th>
+										<th>Tiposdocente</th>
+										<th>Dedicacion</th>
+										<th>Convocatoria</th>
 
                                         <th></th>
                                     </tr>
@@ -49,8 +52,11 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $titulare->docente_id }}</td>
-											<td>{{ $titulare->TipoDocente }}</td>
-											<td>{{ $titulare->Convocatori }}</td>
+											<td>{{ $titulare->designacion_id }}</td>
+											<td>{{ $titulare->estudio_id }}</td>
+											<td>{{ $titulare->TiposDocente }}</td>
+											<td>{{ $titulare->Dedicacion }}</td>
+											<td>{{ $titulare->Convocatoria }}</td>
 
                                             <td>
                                                 <form action="{{ route('titulares.destroy',$titulare->id) }}" method="POST">

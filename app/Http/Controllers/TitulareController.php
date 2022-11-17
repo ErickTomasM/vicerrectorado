@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Titulare;
 use Illuminate\Http\Request;
-use App\Models\Docente;
-use App\Models\Estudio;
 
 /**
  * Class TitulareController
@@ -34,11 +32,8 @@ class TitulareController extends Controller
     public function create()
     {
         $titulare = new Titulare();
-        $docente = Docente::pluck('Nombres', 'id');
-        $tipo = Estudio::pluck('Materia', 'id');
-        return view('titulare.create', compact('titulare', 'docente', 'tipo'));
+        return view('titulare.create', compact('titulare'));
     }
-   
 
     /**
      * Store a newly created resource in storage.

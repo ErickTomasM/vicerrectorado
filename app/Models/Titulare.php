@@ -9,12 +9,17 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property $id
  * @property $docente_id
- * @property $TipoDocente
- * @property $Convocatori
+ * @property $designacion_id
+ * @property $estudio_id
+ * @property $TiposDocente
+ * @property $Dedicacion
+ * @property $Convocatoria
  * @property $created_at
  * @property $updated_at
  *
+ * @property Designacion $designacion
  * @property Docente $docente
+ * @property Estudio $estudio
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -23,8 +28,11 @@ class Titulare extends Model
     
     static $rules = [
 		'docente_id' => 'required',
-		'TipoDocente' => 'required',
-		'Convocatori' => 'required',
+		'designacion_id' => 'required',
+		'estudio_id' => 'required',
+		'TiposDocente' => 'required',
+		'Dedicacion' => 'required',
+		'Convocatoria' => 'required',
     ];
 
     protected $perPage = 20;
@@ -34,15 +42,31 @@ class Titulare extends Model
      *
      * @var array
      */
-    protected $fillable = ['docente_id','TipoDocente','Convocatori'];
+    protected $fillable = ['docente_id','designacion_id','estudio_id','TiposDocente','Dedicacion','Convocatoria'];
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function designacion()
+    {
+        return $this->hasOne('App\Models\Designacion', 'id', 'designacion_id');
+    }
+    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function docente()
     {
         return $this->hasOne('App\Models\Docente', 'id', 'docente_id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function estudio()
+    {
+        return $this->hasOne('App\Models\Estudio', 'id', 'estudio_id');
     }
     
 
