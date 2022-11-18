@@ -55,9 +55,10 @@ class DesignacionController extends Controller
         if ($fac == 'Facultad de Ciencias Puras'){
             $carrera = ['Matematica','Estadistica', 'Ingenieria Informatica', 'Quimica', 'Fisica'];
         }*/
-        $numb = [1];
         
-        return view('designacion.create', compact('designacion', 'docentes', 'fac','numb'));
+        return view('designacion.create', compact('designacion', 'docentes', 'fac'));
+        
+        
     }
 
     /**

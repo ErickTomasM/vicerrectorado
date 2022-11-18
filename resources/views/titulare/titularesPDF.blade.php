@@ -46,4 +46,3 @@ PENDIENTE VINCULAR CON PLAN DE ESTUDIOS
 
 </body>
 </html>
-

@@ -298,7 +298,7 @@ return [
         ],
         [
             'type'         => 'fullscreen-widget',
-            'topnav_right' => false,
+            'topnav_right' => true,
         ],
 
         // Sidebar items:
@@ -320,9 +320,44 @@ return [
             'icon'        => 'far fa-fw fa-file'
             ,
         ],
-        ['header' => 'Opciones'],
+       // -------------------------------------------------------
+        ['header' => 'Designacion de Docentes'],
+//Creacion de la designacion        
         [
-            'text' => 'Docentes',
+            'text' => 'Crear Designacion',
+            'url'  => 'designacions',
+            'icon' => 'fas fa-fw fa-people-line',
+        ],
+//Tipos de Docentes 
+
+[
+    'text'    => 'Designacion Docente',
+    'icon'    => 'fas fa-fw fa-share',
+    'submenu' => [
+        [
+            'text' => 'Titulares',
+            'url'  => 'titulares',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+       
+        [
+            'text' => 'Por Convocatoria',
+            'url'  => 'extraordinarios',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Consultores',
+            'url'  => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+    ],
+],
+
+
+
+        ['header' => 'Registros'],
+        [
+            'text' => 'Planta Docente',
             'url'  => 'docentes',
             'icon' => 'fas fa-fw fa-user',
         ],
@@ -336,11 +371,7 @@ return [
             'url'  => 'estudios',
             'icon' => 'fas fa-fw fa-building',
         ],
-        [
-            'text' => 'Designacion de Docente',
-            'url'  => 'designacions',
-            'icon' => 'fas fa-fw fa-people-line',
-        ],
+        
         [
             'text' => 'Reasignaciones',
             'url'  => 'reasignacions',
@@ -356,6 +387,8 @@ return [
             'url'  => 'horarios',
             'icon' => 'fas fa-fw fa-calendar-days',
         ],
+       
+        
         
     ],
 

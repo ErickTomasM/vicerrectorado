@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('NumeroCarta') }}
-            {{ Form::select('NumeroCarta',$numb, $designacion->NumeroCarta, ['class' => 'form-control' . ($errors->has('NumeroCarta') ? ' is-invalid' : ''), 'placeholder' => 'Numerocarta']) }}
+            {{ Form::text('NumeroCarta', $designacion->NumeroCarta, ['class' => 'form-control' . ($errors->has('NumeroCarta') ? ' is-invalid' : ''), 'placeholder' => 'Numerocarta']) }}
             {!! $errors->first('NumeroCarta', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
