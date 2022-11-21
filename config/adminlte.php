@@ -309,9 +309,9 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'PRUEBAS',
-            'url'         => 'erick',
-            'icon'        => 'far fa-fw fa-file'
+            'text'        => 'Usuarios',
+            'url'         => 'usuarios',
+            'icon'        => 'fas fa-users fa-fw'
             ,
         ],
         [
@@ -332,7 +332,7 @@ return [
 
 [
     'text'    => 'Designacion Docente',
-    'icon'    => 'fas fa-fw fa-share',
+    'icon'    => 'fas fa-users fa-fw',
     'submenu' => [
         [
             'text' => 'Titulares',

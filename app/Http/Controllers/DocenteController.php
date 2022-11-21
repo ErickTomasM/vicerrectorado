@@ -16,9 +16,11 @@ class DocenteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $buscar;
+
     public function index()
     {
-        $docentes = Docente::paginate();
+        $docentes = Docente::where('Nombres', 'LIKE' , '%' . $this->buscar . '%')->paginate();
 
         return view('docente.index', compact('docentes'))
             ->with('i', (request()->input('page', 1) - 1) * $docentes->perPage());

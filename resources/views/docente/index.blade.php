@@ -22,15 +22,20 @@
                                   {{ __('Create New') }}
                                 </a>
                               </div>
+                              
+                                
+                              
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
                         <div class="alert alert-success">
                             <p>{{ $message }}</p>
+                            
                         </div>
                     @endif
 
                     <div class="card-body">
+                    <input wire:model="buscar" type="text" class="form-control" placeholder="buscar">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
