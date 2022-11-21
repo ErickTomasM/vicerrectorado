@@ -47,6 +47,7 @@ class DesignacionController extends Controller
 
         $docentes = Docente::pluck('Nombres','id');
         $fac = ['Facultad de Dercho', 'Facultad de Ciencias Puras', 'Facultad de Ciencias Sociales Humanisticas','Facultad de Medicina'];
+        $prueba = Estudio::pluck('Materia', 'id');
         #$carrera = ['Sistemas','Sistemas Tupiza', 'Odontologia','Ingenieria Minera', 'Ingenieria de Procesos en Materia Primas', 'Mediciana', 'Enfermeria', 'Enfermeria Villazon','Derecho','Derecho Uncia','Derecho Tupiza','Ingenieria Geologica', 'Ingenieria del Medio Ambiente'];
          #$carrera = [];
         /*if ($fac == 'Facultad de Derecho') {
@@ -56,7 +57,7 @@ class DesignacionController extends Controller
             $carrera = ['Matematica','Estadistica', 'Ingenieria Informatica', 'Quimica', 'Fisica'];
         }*/
         
-        return view('designacion.create', compact('designacion', 'docentes', 'fac'));
+        return view('designacion.create', compact('designacion', 'docentes', 'fac', 'prueba'));
         
         
     }

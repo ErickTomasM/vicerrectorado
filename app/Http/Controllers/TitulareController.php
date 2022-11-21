@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Titulare;
 use Illuminate\Http\Request;
+use App\Models\Docente;
+use App\Models\Estudio;
+use App\Models\Designacion;
 
 /**
  * Class TitulareController
@@ -18,7 +21,7 @@ class TitulareController extends Controller
      */
     public function index()
     {
-        $titulares = Titulare::paginate();
+        $titulares = Titulare::paginate(10);
 
         return view('titulare.index', compact('titulares'))
             ->with('i', (request()->input('page', 1) - 1) * $titulares->perPage());
@@ -32,10 +35,19 @@ class TitulareController extends Controller
     public function create()
     {
         $titulare = new Titulare();
-        return view('titulare.create', compact('titulare'));
+        $docente = Docente::pluck('Nombres', 'id');
+        $estudio = Estudio::pluck('Materia', 'id');
+        $designacion = Designacion::pluck('Dictamen', 'id');
+        $dedicacion = ['','A Tiempo Completo', 'A Tiempo Horario'];
+        $tipo = ['','Extraordinario','Contratado','Ordinario Titular'];
+        return view('titulare.create', compact('titulare', 'docente', 'estudio', 'designacion', 'dedicacion', 'tipo'));
     }
 
     /**
+     * $table->enum('TiposDocente', ['Extraordinario','Contratado','Ordinario Titular'])->default('Extraordinario','Contratado','Ordinario Titular');
+     *       $table->enum('Dedicacion', ['A Tiempo Completo', 'A Tiempo Horario'])->default('A Tiempo Completo', 'A Tiempo Horario');
+     * 
+     * 
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request

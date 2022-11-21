@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 
 @section('template_title')
     Designacion
@@ -44,7 +44,6 @@
 										<th>Carrera</th>
 										<th>Gestion</th>
 										<th>Semestre</th>
-										<th>Convocatoria</th>
 
                                         <th></th>
                                     </tr>
@@ -62,7 +61,6 @@
 											<td>{{ $designacion->Carrera }}</td>
 											<td>{{ $designacion->Gestion }}</td>
 											<td>{{ $designacion->Semestre }}</td>
-											<td>{{ $designacion->Convocatoria }}</td>
 
                                             <td>
                                                 <form action="{{ route('designacions.destroy',$designacion->id) }}" method="POST">

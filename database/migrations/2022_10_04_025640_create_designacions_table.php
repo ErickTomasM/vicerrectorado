@@ -17,14 +17,14 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->date('FechaDesignacion')->date_format('dd, FF, YY');
-            $table->string('Resolucion');
+            $table->string('Resolucion')->nullable();
             $table->string('Dictamen');
             $table->integer('NumeroCarta');
             $table->string('Facultad');
             $table->string('Carrera');
             $table->string('Gestion');
             $table->string('Semestre');
-            $table->enum('Convocatoria', ['Primera Convocatoria', 'Segunda Convocatoria','Tercera Convocatoria']);
+            
             
             $table->timestamps();
         });

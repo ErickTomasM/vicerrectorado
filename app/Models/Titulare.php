@@ -11,9 +11,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property $docente_id
  * @property $designacion_id
  * @property $estudio_id
+ * @property $materia01
+ * @property $materia02
+ * @property $materia03
+ * @property $materia04
+ * @property $materia05
  * @property $TiposDocente
  * @property $Dedicacion
- * @property $Convocatoria
  * @property $created_at
  * @property $updated_at
  *
@@ -32,7 +36,6 @@ class Titulare extends Model
 		'estudio_id' => 'required',
 		'TiposDocente' => 'required',
 		'Dedicacion' => 'required',
-		'Convocatoria' => 'required',
     ];
 
     protected $perPage = 20;
@@ -42,7 +45,7 @@ class Titulare extends Model
      *
      * @var array
      */
-    protected $fillable = ['docente_id','designacion_id','estudio_id','TiposDocente','Dedicacion','Convocatoria'];
+    protected $fillable = ['docente_id','designacion_id','estudio_id','materia01','materia02','materia03','materia04','materia05','TiposDocente','Dedicacion'];
 
 
     /**

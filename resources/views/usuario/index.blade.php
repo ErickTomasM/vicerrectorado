@@ -17,21 +17,14 @@
                                 {{ __('Usuario') }}
                             </span>
                         </div>
-                        
+                        <input class="form-control" placeholder:"buscar">
                     </div>
                     @if ($message = Session::get('success'))
                         <div class="alert alert-success">
                             <p>{{ $message }}</p>
                         </div>
                     @endif
-                    <form action="">
-                        <div class="form-row">
-                            <div class="cold-ms-4">
-                                    <input type="form-control" placeholder:"buscar">
-                            </div>
-                            
-                        </div>
-                    </form>
+                    
                     <div class="card-body">
                     
                         <div class="table-responsive">

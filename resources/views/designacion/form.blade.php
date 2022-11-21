@@ -41,11 +41,6 @@
             {{ Form::text('Semestre', $designacion->Semestre, ['class' => 'form-control' . ($errors->has('Semestre') ? ' is-invalid' : ''), 'placeholder' => 'Semestre']) }}
             {!! $errors->first('Semestre', '<div class="invalid-feedback">:message</div>') !!}
         </div>
-        <div class="form-group">
-            {{ Form::label('Convocatoria') }}
-            {{ Form::text('Convocatoria', $designacion->Convocatoria, ['class' => 'form-control' . ($errors->has('Convocatoria') ? ' is-invalid' : ''), 'placeholder' => 'Convocatoria']) }}
-            {!! $errors->first('Convocatoria', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
 
     </div>
     <div class="box-footer mt20">

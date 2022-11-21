@@ -16,12 +16,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property $Carrera
  * @property $Gestion
  * @property $Semestre
- * @property $Convocatoria
  * @property $created_at
  * @property $updated_at
  *
  * @property Extraordinario[] $extraordinarios
  * @property Reasignacion[] $reasignacions
+ * @property Titulare[] $titulares
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -30,14 +30,12 @@ class Designacion extends Model
     
     static $rules = [
 		'FechaDesignacion' => 'required',
-		'Resolucion' => 'required',
 		'Dictamen' => 'required',
 		'NumeroCarta' => 'required',
 		'Facultad' => 'required',
 		'Carrera' => 'required',
 		'Gestion' => 'required',
 		'Semestre' => 'required',
-		'Convocatoria' => 'required',
     ];
 
     protected $perPage = 20;
@@ -47,7 +45,7 @@ class Designacion extends Model
      *
      * @var array
      */
-    protected $fillable = ['FechaDesignacion','Resolucion','Dictamen','NumeroCarta','Facultad','Carrera','Gestion','Semestre','Convocatoria'];
+    protected $fillable = ['FechaDesignacion','Resolucion','Dictamen','NumeroCarta','Facultad','Carrera','Gestion','Semestre'];
 
 
     /**
@@ -64,6 +62,14 @@ class Designacion extends Model
     public function reasignacions()
     {
         return $this->hasMany('App\Models\Reasignacion', 'designacion_id', 'id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function titulares()
+    {
+        return $this->hasMany('App\Models\Titulare', 'designacion_id', 'id');
     }
     
 

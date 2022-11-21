@@ -21,13 +21,18 @@ return new class extends Migration
             $table->unsignedBigInteger('docente_id');
             $table->unsignedBigInteger('designacion_id');
             $table->unsignedBigInteger('estudio_id');
-            $table->enum('TiposDocente', ['Extraordinario','Contratado','Ordinario Titular']);
-            $table->enum('Dedicacion', ['A Tiempo Completo', 'A Tiempo Horario']);
-            $table->enum('Convocatoria', ['Primera Convocatoria', 'Segunda Convocatoria','Tercera Convocatoria']);
+            $table->string('materia01')->nullable();
+            $table->string('materia02')->nullable();
+            $table->string('materia03')->nullable();
+            $table->string('materia04')->nullable();
+            $table->string('materia05')->nullable();
+            $table->enum('TiposDocente', ['Extraordinario','Contratado','Ordinario Titular'])->default('Extraordinario','Contratado','Ordinario Titular');
+            $table->enum('Dedicacion', ['A Tiempo Completo', 'A Tiempo Horario'])->default('A Tiempo Completo', 'A Tiempo Horario');
             #$table->foreign('designacion_id')->references('id')->on('designacions');
             $table->foreign('docente_id')->references('id')->on('docentes');
             $table->foreign('designacion_id')->references('id')->on('designacions');
             $table->foreign('estudio_id')->references('id')->on('estudios');
+            
             $table->timestamps();
         });
     }

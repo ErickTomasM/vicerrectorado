@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 
 @section('template_title')
     Extraordinario
@@ -39,8 +39,14 @@
 										<th>Docente Id</th>
 										<th>Designacion Id</th>
 										<th>Estudio Id</th>
+										<th>Estudio1</th>
+										<th>Estudio2</th>
+										<th>Estudio3</th>
+										<th>Estudio4</th>
+										<th>Estudio5</th>
 										<th>Tiposdocente</th>
 										<th>Dedicacion</th>
+										<th>Convocatoria</th>
 
                                         <th></th>
                                     </tr>
@@ -53,8 +59,14 @@
 											<td>{{ $extraordinario->docente_id }}</td>
 											<td>{{ $extraordinario->designacion_id }}</td>
 											<td>{{ $extraordinario->estudio_id }}</td>
+											<td>{{ $extraordinario->estudio1 }}</td>
+											<td>{{ $extraordinario->estudio2 }}</td>
+											<td>{{ $extraordinario->estudio3 }}</td>
+											<td>{{ $extraordinario->estudio4 }}</td>
+											<td>{{ $extraordinario->estudio5 }}</td>
 											<td>{{ $extraordinario->TiposDocente }}</td>
 											<td>{{ $extraordinario->Dedicacion }}</td>
+											<td>{{ $extraordinario->Convocatoria }}</td>
 
                                             <td>
                                                 <form action="{{ route('extraordinarios.destroy',$extraordinario->id) }}" method="POST">

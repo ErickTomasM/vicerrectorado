@@ -37,26 +37,45 @@
                                         <th>No</th>
                                         
 										<th>Docente Id</th>
-										<th>Designacion Id</th>
-										<th>Estudio Id</th>
+										<th>Segun dictamen N°</th>
+										<th>Materia Id</th>
+										<th>Materia 1</th>
+										<th>Materia 2</th>
+										<th>Materia 3</th>
+										<th>Materia 4</th>
+										<th>Materia 5</th>
 										<th>Tiposdocente</th>
 										<th>Dedicacion</th>
-										<th>Convocatoria</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($titulares as $titulare)
+                                        
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $titulare->docente_id }}</td>
-											<td>{{ $titulare->designacion_id }}</td>
-											<td>{{ $titulare->estudio_id }}</td>
+											<td>{{ $titulare->docente->Nombres }}
+                                                {{ $titulare->docente->ApellidoPaterno }}
+                                                {{ $titulare->docente->ApellidoMaterno }}
+                                            </td>
+
+											<td>{{ $titulare->designacion->Dictamen }}</td>
+											<td>{{ $titulare->estudio_id }}
+                                                {{ $titulare->estudio->Materia }}
+                                            </td>
+											<td>{{ $titulare->materia01 }}
+                                                {{ $titulare->estudio->Materia }}
+                                            </td>
+											<td>{{ $titulare->materia02 }}
+                                                    
+                                            </td>
+											<td>{{ $titulare->materia03   }}</td>
+											<td>{{ $titulare->materia04   }}</td>
+											<td>{{ $titulare->materia05   }}</td>
 											<td>{{ $titulare->TiposDocente }}</td>
 											<td>{{ $titulare->Dedicacion }}</td>
-											<td>{{ $titulare->Convocatoria }}</td>
 
                                             <td>
                                                 <form action="{{ route('titulares.destroy',$titulare->id) }}" method="POST">
@@ -68,6 +87,7 @@
                                                 </form>
                                             </td>
                                         </tr>
+                                        
                                     @endforeach
                                 </tbody>
                             </table>

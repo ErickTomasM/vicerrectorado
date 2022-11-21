@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 
 @section('template_title')
     {{ $designacion->name ?? 'Show Designacion' }}
@@ -51,10 +51,6 @@
                         <div class="form-group">
                             <strong>Semestre:</strong>
                             {{ $designacion->Semestre }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Convocatoria:</strong>
-                            {{ $designacion->Convocatoria }}
                         </div>
 
                     </div>

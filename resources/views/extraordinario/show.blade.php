@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 
 @section('template_title')
     {{ $extraordinario->name ?? 'Show Extraordinario' }}
@@ -33,12 +33,36 @@
                             {{ $extraordinario->estudio_id }}
                         </div>
                         <div class="form-group">
+                            <strong>Estudio1:</strong>
+                            {{ $extraordinario->estudio1 }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Estudio2:</strong>
+                            {{ $extraordinario->estudio2 }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Estudio3:</strong>
+                            {{ $extraordinario->estudio3 }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Estudio4:</strong>
+                            {{ $extraordinario->estudio4 }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Estudio5:</strong>
+                            {{ $extraordinario->estudio5 }}
+                        </div>
+                        <div class="form-group">
                             <strong>Tiposdocente:</strong>
                             {{ $extraordinario->TiposDocente }}
                         </div>
                         <div class="form-group">
                             <strong>Dedicacion:</strong>
                             {{ $extraordinario->Dedicacion }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Convocatoria:</strong>
+                            {{ $extraordinario->Convocatoria }}
                         </div>
 
                     </div>
