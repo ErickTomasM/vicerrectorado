@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 
 @section('template_title')
     Titulare
@@ -37,13 +37,13 @@
                                         <th>No</th>
                                         
 										<th>Docente Id</th>
-										<th>Segun dictamen N°</th>
-										<th>Materia Id</th>
-										<th>Materia 1</th>
-										<th>Materia 2</th>
-										<th>Materia 3</th>
-										<th>Materia 4</th>
-										<th>Materia 5</th>
+										<th>Designacion Id</th>
+                                        <th>Estudio Id</th>
+    									th>Materia01</th>
+										<th>Materia02</th>
+										<th>Materia03</th>
+										<th>Materia04</th>
+										<th>Materia05</th>
 										<th>Tiposdocente</th>
 										<th>Dedicacion</th>
 
@@ -52,28 +52,18 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($titulares as $titulare)
-                                        
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $titulare->docente->Nombres }}
-                                                {{ $titulare->docente->ApellidoPaterno }}
-                                                {{ $titulare->docente->ApellidoMaterno }}
-                                            </td>
-
-											<td>{{ $titulare->designacion->Dictamen }}</td>
-											<td>{{ $titulare->estudio_id }}
-                                                {{ $titulare->estudio->Materia }}
-                                            </td>
+											<td>{{ $titulare->docente_id }}</td>
+											<td>{{ $titulare->designacion_id }}</td>
 											<td>{{ $titulare->materia01 }}
-                                                {{ $titulare->estudio->Materia }}
+                                               
                                             </td>
-											<td>{{ $titulare->materia02 }}
-                                                    
-                                            </td>
-											<td>{{ $titulare->materia03   }}</td>
-											<td>{{ $titulare->materia04   }}</td>
-											<td>{{ $titulare->materia05   }}</td>
+											<td>{{ $titulare->materia02 }}</td>
+											<td>{{ $titulare->materia03 }}</td>
+											<td>{{ $titulare->materia04 }}</td>
+											<td>{{ $titulare->materia05 }}</td>
 											<td>{{ $titulare->TiposDocente }}</td>
 											<td>{{ $titulare->Dedicacion }}</td>
 
@@ -87,7 +77,6 @@
                                                 </form>
                                             </td>
                                         </tr>
-                                        
                                     @endforeach
                                 </tbody>
                             </table>

@@ -58,9 +58,19 @@
                                             
 											<td>{{ $extraordinario->docente_id }}</td>
 											<td>{{ $extraordinario->designacion_id }}</td>
-											<td>{{ $extraordinario->estudio_id }}</td>
-											<td>{{ $extraordinario->estudio1 }}</td>
-											<td>{{ $extraordinario->estudio2 }}</td>
+											<td>{{ $extraordinario->estudio_id }}
+                                                {{ $extraordinario->estudio->Materia }}
+                                            </td>
+                                            @foreach($extraordinarios as $extraordinario)
+                                            <td>{{ $extraordinario->estudio1 }}
+                                                 {{ $extraordinario->estudio->Materia }}
+                                            </td>
+                                            @endforeach
+											 @foreach($extraordinarios as $extraordinario)
+											<td>{{ $extraordinario->estudio2 }}
+                                            {{ $extraordinario->estudio->Materia }}
+                                            </td>
+                                            @endforeach
 											<td>{{ $extraordinario->estudio3 }}</td>
 											<td>{{ $extraordinario->estudio4 }}</td>
 											<td>{{ $extraordinario->estudio5 }}</td>

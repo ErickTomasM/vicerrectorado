@@ -33,6 +33,7 @@ return new class extends Migration
             $table->foreign('designacion_id')->references('id')->on('designacions');
             $table->foreign('estudio_id')->references('id')->on('estudios');
             
+            
             $table->timestamps();
         });
     }

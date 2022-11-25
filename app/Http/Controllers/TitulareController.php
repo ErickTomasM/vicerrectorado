@@ -22,9 +22,15 @@ class TitulareController extends Controller
     public function index()
     {
         $titulares = Titulare::paginate(10);
-
-        return view('titulare.index', compact('titulares'))
+        $estudios = Estudio::plucK('Materia','id');
+        return view('titulare.index', compact('titulares', 'estudios'))
             ->with('i', (request()->input('page', 1) - 1) * $titulares->perPage());
+    }
+
+    public function prueba()
+    {
+        $pruebas = Estudio::all('Materia.id');
+        return view('titulare.index', compact('pruebas'));
     }
 
     /**
@@ -36,7 +42,7 @@ class TitulareController extends Controller
     {
         $titulare = new Titulare();
         $docente = Docente::pluck('Nombres', 'id');
-        $estudio = Estudio::pluck('Materia', 'id');
+        $estudio = Estudio::pluck('Materia');
         $designacion = Designacion::pluck('Dictamen', 'id');
         $dedicacion = ['','A Tiempo Completo', 'A Tiempo Horario'];
         $tipo = ['','Extraordinario','Contratado','Ordinario Titular'];
@@ -72,8 +78,9 @@ class TitulareController extends Controller
     public function show($id)
     {
         $titulare = Titulare::find($id);
+        $estudios = Estudio::pluck('Materia', 'id');
 
-        return view('titulare.show', compact('titulare'));
+        return view('titulare.show', compact('titulare', 'estudios'));
     }
 
     /**

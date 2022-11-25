@@ -1,67 +1,58 @@
 
 @extends('adminlte::page')
 
-@section('template_title')
-    Usuario
+
+    
+@section('css')
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" >
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" >
 @endsection
+
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-
-                            <span id="card_title">
-                                {{ __('Usuario') }}
-                            </span>
-                        </div>
-                        <input class="form-control" placeholder:"buscar">
-                    </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
                     
-                    <div class="card-body">
-                    
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+<div class="card-body">
 
+    <table class="table table-striped">
 
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>Correo Electronico</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo Electronico</th>
+                <th></th>
+            </tr>
+        </thead>
 
-                            <tbody>
-                            @foreach($usuarios as $usuario)
-                                <tr>
-                                    <td>{{$usuario->id}}</td>
-                                    <td>{{$usuario->name}}</td>
-                                    <td>{{$usuario->email}}</td>
-                                    <td><a class="btn btn-sm btn-success" href=""><i class="fa fa-fw fa-edit"></i> Edit</a></td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                            
-                            </table>
-                          
-                        </div>
-                    </div>
-
-                    {{ $usuarios->links() }}
-
-                </div>
-                
-            </div>
-        </div>
-    </div>
-    
+        <tbody>
+            @foreach($usuarios as $usuario)
+                <tr>
+                     <td>{{$usuario->id}}</td>
+                     <td>{{$usuario->name}}</td>
+                     <td>{{$usuario->email}}</td>
+                     <td><a class="btn btn-sm btn-success" href="{{route('usuarios.edit', $usuario)}}"><i class="fa fa-fw fa-edit"></i> Edit</a></td>
+                     
+                </tr>
+            @endforeach
+            
+        </tbody>
+       
+    </table>
+</div>                  
+<div class="card-footer">
+       
+    {!! $usuarios->links() !!}
+   </div>
 @endsection
+
+@section('js')
+<sript src="stylesheet" href="https://code.jquery.com/jquery-3.5.1.js" ></sript>    
+<sript src="stylesheet" href="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" ></sript>
+<sript src="stylesheet" href="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js" ></sript>
+<script>$(document).ready(function () {
+    $('#usuarios').DataTable();
+});</script>
+
+@stop
+ 

@@ -311,8 +311,9 @@ return [
         [
             'text'        => 'Usuarios',
             'url'         => 'usuarios',
-            'icon'        => 'fas fa-users fa-fw'
-            ,
+            'icon'        => 'fas fa-users fa-fw',
+            'can'   => 'users.index'
+            
         ],
         [
             'text'        => 'Informacion General',
@@ -360,6 +361,7 @@ return [
             'text' => 'Planta Docente',
             'url'  => 'docentes',
             'icon' => 'fas fa-fw fa-user',
+            'can'  => 'docentes.index'
         ],
         [
             'text' => 'Infraestructura',

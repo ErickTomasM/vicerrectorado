@@ -21,6 +21,11 @@ class RolSeeder extends Seeder
         $Facu = Role::create(['name' => 'Facultad']);
         $Carr = Role::create(['name' => 'Carrera']);
         
+        Permission::create(['name' => 'users.index'])->syncRoles([$Admin]);
+        Permission::create(['name' => 'users.edit'])->syncRoles([$Admin]);
+        Permission::create(['name' => 'users.update'])->syncRoles([$Admin]);
+        
+
         Permission::create(['name' => 'docentes.index'])->syncRoles([$Admin, $Carr, $Facu]);
         Permission::create(['name' => 'docentes.create'])->syncRoles([$Admin, $Carr]);
         Permission::create(['name' => 'docentes.edit'])->syncRoles([$Admin, $Carr]);
@@ -41,6 +46,6 @@ class RolSeeder extends Seeder
         Permission::create(['name' => 'designacions.edit'])->syncRoles([$Admin, $Carr]);
         Permission::create(['name' => 'designacions.delete'])->syncRoles([$Admin, $Carr]);
 
-        
+
     }
 }

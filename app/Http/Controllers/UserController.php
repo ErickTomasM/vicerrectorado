@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
+
 
 
 
@@ -21,7 +23,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $usuarios = User::where('name', 'LIKE' , '%' . $this->buscar)->paginate();
+        $usuarios = User::paginate();
         
         return view('usuario.index', compact('usuarios'));
             //->with('i', (request()->input('page', 1) - 1) * $usuarios->perPage());
@@ -66,9 +68,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $usuario)
     {
-        //
+        $roles = Role::all();
+        return view('usuario.edit', compact('usuario','roles'));
+       // return $usuario;
     }
 
     /**
@@ -78,9 +82,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $usuario)
     {
-        //
+        $usuario->roles()->sync($request->roles);
+        
+        return redirect()->route('usuarios.edit', $usuario)->with('info', 'Se asigno el roles correctamente');  
     }
 
     /**
