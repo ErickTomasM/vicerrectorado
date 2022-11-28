@@ -348,7 +348,7 @@ return [
         ],
         [
             'text' => 'Consultores',
-            'url'  => 'fas fa-fw fa-user',
+            'url'  => 'consultores',
             'icon' => 'fas fa-fw fa-user',
         ],
     ],

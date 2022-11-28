@@ -40,3 +40,4 @@ Route::resource('horarios', App\Http\Controllers\HorarioController::class);
 Route::resource('titulares', App\Http\Controllers\TitulareController::class);
 Route::resource('extraordinarios', App\Http\Controllers\ExtraordinarioController::class);
 Route::resource('usuarios', App\Http\Controllers\UserController::class);
+Route::resource('consultores', App\Http\Controllers\ConsultoreController::class);
