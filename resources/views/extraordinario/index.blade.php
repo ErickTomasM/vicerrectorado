@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('template_title')
     Extraordinario
@@ -61,30 +61,38 @@
 											<td>{{ $extraordinario->estudio_id }}
                                                 {{ $extraordinario->estudio->Materia }}
                                             </td>
-                                            @foreach($extraordinarios as $extraordinario)
+                                            
+                                            
+                                       
                                             <td>{{ $extraordinario->estudio1 }}
                                                  {{ $extraordinario->estudio->Materia }}
                                             </td>
-                                            @endforeach
-											 @foreach($extraordinarios as $extraordinario)
+                                           
 											<td>{{ $extraordinario->estudio2 }}
                                             {{ $extraordinario->estudio->Materia }}
                                             </td>
-                                            @endforeach
 											<td>{{ $extraordinario->estudio3 }}</td>
 											<td>{{ $extraordinario->estudio4 }}</td>
 											<td>{{ $extraordinario->estudio5 }}</td>
+                                            
+
 											<td>{{ $extraordinario->TiposDocente }}</td>
 											<td>{{ $extraordinario->Dedicacion }}</td>
 											<td>{{ $extraordinario->Convocatoria }}</td>
 
                                             <td>
                                                 <form action="{{ route('extraordinarios.destroy',$extraordinario->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('extraordinarios.show',$extraordinario->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('extraordinarios.edit',$extraordinario->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    @can('extraordinarios.show')
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('extraordinarios.show',$extraordinario->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                                    @endcan
+                                                    @can('extraordinarios.edit')
+                                                    <a class="btn btn-sm btn-success" href="{{ route('extraordinarios.edit',$extraordinario->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                    @endcan
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    @can('extraordinarios.destroy')
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
+                                                    @endcan
                                                 </form>
                                             </td>
                                         </tr>

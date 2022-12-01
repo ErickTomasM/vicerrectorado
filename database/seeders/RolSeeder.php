@@ -41,10 +41,20 @@ class RolSeeder extends Seeder
         Permission::create(['name' => 'titulares.edit'])->syncRoles([$Admin, $Carr]);
         Permission::create(['name' => 'titulares.delete'])->syncRoles([$Admin, $Carr]);
 
+        Permission::create(['name' => 'consultores.index'])->syncRoles([$Admin, $Carr, $Facu]);
+        Permission::create(['name' => 'consultores.create'])->syncRoles([$Admin, $Carr]);
+        Permission::create(['name' => 'consultores.edit'])->syncRoles([$Admin, $Carr]);
+        Permission::create(['name' => 'consultores.delete'])->syncRoles([$Admin, $Carr]);
+
         Permission::create(['name' => 'designacions.index'])->syncRoles([$Admin, $Carr, $Facu]);
         Permission::create(['name' => 'designacions.create'])->syncRoles([$Admin, $Carr]);
         Permission::create(['name' => 'designacions.edit'])->syncRoles([$Admin, $Carr]);
         Permission::create(['name' => 'designacions.delete'])->syncRoles([$Admin, $Carr]);
+
+        Permission::create(['name' => 'estudios.index'])->syncRoles([$Admin, $Carr, $Facu]);
+        Permission::create(['name' => 'estudios.create'])->syncRoles([$Admin, $Carr]);
+        Permission::create(['name' => 'estudios.edit'])->syncRoles([$Admin, $Carr]);
+        Permission::create(['name' => 'estudios.delete'])->syncRoles([$Admin, $Carr]);
 
 
     }

@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use App\Models\Docente;
 use App\Models\Estudio;
 use App\Models\Designacion;
+use Barryvdh\DomPDF\Facade\Pdf;
+
+
+
+use DB;
 
 /**
  * Class TitulareController
@@ -22,9 +27,19 @@ class TitulareController extends Controller
     public function index()
     {
         $titulares = Titulare::paginate(10);
-        $estudios = Estudio::plucK('Materia','id');
+        $estudios = Estudio::select('*')->get();
         return view('titulare.index', compact('titulares', 'estudios'))
             ->with('i', (request()->input('page', 1) - 1) * $titulares->perPage());
+    }
+
+    public function pdf()
+    {
+        $titular = Designacion::paginate();
+        $pdf = PDF::loadView('titulare.pdf', ['titulares'=>$titular]);
+        //$pdf->loadHTML('<h1>Test</h1>');
+        return $pdf->stream();
+        
+       //return view('designacion.pdf', compact('designacions'));
     }
 
     public function prueba()
@@ -42,7 +57,7 @@ class TitulareController extends Controller
     {
         $titulare = new Titulare();
         $docente = Docente::pluck('Nombres', 'id');
-        $estudio = Estudio::pluck('Materia');
+        $estudio = Estudio::pluck('Materia', 'id');
         $designacion = Designacion::pluck('Dictamen', 'id');
         $dedicacion = ['','A Tiempo Completo', 'A Tiempo Horario'];
         $tipo = ['','Extraordinario','Contratado','Ordinario Titular'];
@@ -92,8 +107,13 @@ class TitulareController extends Controller
     public function edit($id)
     {
         $titulare = Titulare::find($id);
+        $docente = Docente::pluck('Nombres', 'id');
+        $estudio = Estudio::pluck('Materia', 'id');
+        $designacion = Designacion::pluck('Dictamen', 'id');
+        $dedicacion = ['','A Tiempo Completo', 'A Tiempo Horario'];
+        $tipo = ['','Extraordinario','Contratado','Ordinario Titular'];
 
-        return view('titulare.edit', compact('titulare'));
+        return view('titulare.edit', compact('titulare', 'docente', 'estudio', 'designacion', 'dedicacion', 'tipo'));
     }
 
     /**

@@ -68,11 +68,17 @@
 
                                             <td>
                                                 <form action="{{ route('consultores.destroy',$consultore->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('consultores.show',$consultore->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('consultores.edit',$consultore->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    @can('consultores.show')
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('consultores.show',$consultore->id) }}"><i class="fa fa-fw fa-eye"></i> ver</a>
+                                                    @endcan
+                                                    @can('consultores.edit')
+                                                    <a class="btn btn-sm btn-success" href="{{ route('consultores.edit',$consultore->id) }}"><i class="fa fa-fw fa-edit"></i> Editar/a>
+                                                    @endcan
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    @can('consultores.destroy')
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
+                                                    @endcan
                                                 </form>
                                             </td>
                                         </tr>

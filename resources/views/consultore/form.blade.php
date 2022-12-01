@@ -42,6 +42,7 @@
             {!! $errors->first('materiaC05', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
+            f
             {{ Form::label('Dedicacion') }}
             {{ Form::select('Dedicacion', $dedicacion,$consultore->Dedicacion, ['class' => 'form-control' . ($errors->has('Dedicacion') ? ' is-invalid' : ''), 'placeholder' => 'Dedicacion']) }}
             {!! $errors->first('Dedicacion', '<div class="invalid-feedback">:message</div>') !!}

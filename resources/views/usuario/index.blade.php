@@ -31,7 +31,7 @@
                      <td>{{$usuario->id}}</td>
                      <td>{{$usuario->name}}</td>
                      <td>{{$usuario->email}}</td>
-                     <td><a class="btn btn-sm btn-success" href="{{route('usuarios.edit', $usuario)}}"><i class="fa fa-fw fa-edit"></i> Edit</a></td>
+                     <td><a class="btn btn-sm btn-success" href="{{route('usuarios.edit', $usuario)}}"><i class="fa fa-fw fa-edit"></i> Asignar</a></td>
                      
                 </tr>
             @endforeach

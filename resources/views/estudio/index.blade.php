@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('template_title')
     Estudio
@@ -56,11 +56,19 @@
 
                                             <td>
                                                 <form action="{{ route('estudios.destroy',$estudio->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('estudios.show',$estudio->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('estudios.edit',$estudio->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    @can('estudios.show')
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('estudios.show',$estudio->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                                    @endcan
+
+                                                    @can('estudios.edit')
+                                                    <a class="btn btn-sm btn-success" href="{{ route('estudios.edit',$estudio->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                    @endcan
+                                                    
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    @can('estudios.destroy')
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
+                                                    @endcan
                                                 </form>
                                             </td>
                                         </tr>

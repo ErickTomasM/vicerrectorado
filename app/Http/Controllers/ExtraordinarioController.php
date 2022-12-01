@@ -37,15 +37,15 @@ class ExtraordinarioController extends Controller
         
         $extraordinario = new Extraordinario();
         
-        $extra = Docente::pluck('Nombres', 'id');
-        $resol = Designacion::pluck('Resolucion', 'id');
-        $plan = Estudio::pluck('Materia', 'id');
-        $c = ["Elija una Opcion","Primera Covocatoria","Segunda Convocatoria", "Tercera Convocatoria", "Por Invitacion"];
-        $t = ["Elija una Opcion", "Extraordinario Interino", "Invitado"];
-        $d = ["Elija una Opcion", "A Tiempo Completo", "A Tiempo Horario"];
+        $docente = Docente::pluck('Nombres', 'id');
+        $designacion = Designacion::pluck('Resolucion', 'id');
+        $estudio = Estudio::pluck('Materia', 'id');
+        $convocatoria = ["Elija una Opcion","Primera Covocatoria","Segunda Convocatoria", "Tercera Convocatoria", "Por Invitacion"];
+        $tipo = ["Elija una Opcion", "Extraordinario Interino", "Invitado"];
+        $dedicacion = ["Elija una Opcion", "A Tiempo Completo", "A Tiempo Horario"];
        // $docentesE = Docente::pluck('Nombres','id');
        
-        return view('extraordinario.create', compact('extraordinario','extra','resol','plan','c','t','d'));
+        return view('extraordinario.create', compact('extraordinario','docente','designacion','estudio','convocatoria','tipo','dedicacion'));
     }
     
 
@@ -87,12 +87,15 @@ class ExtraordinarioController extends Controller
     public function edit($id)
     {
         $extraordinario = Extraordinario::find($id);
-        $extra = Docente::pluck('Nombres', 'id');
-        $c = ["Elija una Opcion","Primera Covocatoria","Segunda Convocatoria", "Tercera Convocatoria", "Por Invitacion"];
-        $t = ["Elija una Opcion", "Extraordinario Interino", "Invitado"];
-        $d = ["Elija una Opcion", "A Tiempo Completo", "A Tiempo Horario"];
 
-        return view('extraordinario.edit', compact('extraordinario','extra','c','t','d'));
+        $docente = Docente::pluck('Nombres', 'id');
+        $designacion = Designacion::pluck('Resolucion', 'id');
+        $estudio = Estudio::pluck('Materia', 'id');
+        $convocatoria = ["Elija una Opcion","Primera Covocatoria","Segunda Convocatoria", "Tercera Convocatoria", "Por Invitacion"];
+        $tipo = ["Elija una Opcion", "Extraordinario Interino", "Invitado"];
+        $dedicacion = ["Elija una Opcion", "A Tiempo Completo", "A Tiempo Horario"];
+
+        return view('extraordinario.edit', compact('extraordinario','docente','designacion','estudio','convocatoria','tipo','dedicacion'));
     }
 
     /**

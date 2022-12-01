@@ -2,53 +2,53 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('docente_id') }}
-            {{ Form::text('docente_id', $titulare->docente_id, ['class' => 'form-control' . ($errors->has('docente_id') ? ' is-invalid' : ''), 'placeholder' => 'Docente Id']) }}
+            {{ Form::label('Docente') }}
+            {{ Form::select('docente_id',$docente, $titulare->docente_id, ['class' => 'form-control' . ($errors->has('docente_id') ? ' is-invalid' : ''), 'placeholder' => 'Seleccione un Docente']) }}
             {!! $errors->first('docente_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('designacion_id') }}
-            {{ Form::text('designacion_id', $titulare->designacion_id, ['class' => 'form-control' . ($errors->has('designacion_id') ? ' is-invalid' : ''), 'placeholder' => 'Designacion Id']) }}
+            {{ Form::label('Designacion') }}
+            {{ Form::select('designacion_id',$designacion, $titulare->designacion_id, ['class' => 'form-control' . ($errors->has('designacion_id') ? ' is-invalid' : ''), 'placeholder' => 'Mediante el Dictamen']) }}
             {!! $errors->first('designacion_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('estudio_id') }}
-            {{ Form::text('estudio_id', $titulare->estudio_id, ['class' => 'form-control' . ($errors->has('estudio_id') ? ' is-invalid' : ''), 'placeholder' => 'Estudio Id']) }}
+            {{ Form::label('Plan de estudios') }}
+            {{ Form::select('estudio_id',$estudio, $titulare->estudio_id, ['class' => 'form-control' . ($errors->has('estudio_id') ? ' is-invalid' : ''), 'placeholder' => 'Seleccione una Materia']) }}
             {!! $errors->first('estudio_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('materia01') }}
-            {{ Form::text('materia01', $titulare->materia01, ['class' => 'form-control' . ($errors->has('materia01') ? ' is-invalid' : ''), 'placeholder' => 'Materia01']) }}
+            {{ Form::label('Plan de estudios') }}
+            {{ Form::select('materia01',$estudio, $titulare->materia01, ['class' => 'form-control' . ($errors->has('materia01') ? ' is-invalid' : ''), 'placeholder' => 'Seleccione una Materia']) }}
             {!! $errors->first('materia01', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('materia02') }}
-            {{ Form::text('materia02', $titulare->materia02, ['class' => 'form-control' . ($errors->has('materia02') ? ' is-invalid' : ''), 'placeholder' => 'Materia02']) }}
+            {{ Form::label('Plan de estudios') }}
+            {{ Form::select('materia02',$estudio, $titulare->materia02, ['class' => 'form-control' . ($errors->has('materia02') ? ' is-invalid' : ''), 'placeholder' => 'Seleccione una Materia']) }}
             {!! $errors->first('materia02', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('materia03') }}
-            {{ Form::text('materia03', $titulare->materia03, ['class' => 'form-control' . ($errors->has('materia03') ? ' is-invalid' : ''), 'placeholder' => 'Materia03']) }}
+            {{ Form::label('Plan de estudios') }}
+            {{ Form::select('materia03',$estudio, $titulare->materia03, ['class' => 'form-control' . ($errors->has('materia03') ? ' is-invalid' : ''), 'placeholder' => 'Seleccione una Materia']) }}
             {!! $errors->first('materia03', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('materia04') }}
-            {{ Form::text('materia04', $titulare->materia04, ['class' => 'form-control' . ($errors->has('materia04') ? ' is-invalid' : ''), 'placeholder' => 'Materia04']) }}
+            {{ Form::label('Plan de estudios') }}
+            {{ Form::select('materia04',$estudio, $titulare->materia04, ['class' => 'form-control' . ($errors->has('materia04') ? ' is-invalid' : ''), 'placeholder' => 'Seleccione una Materia']) }}
             {!! $errors->first('materia04', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('materia05') }}
-            {{ Form::text('materia05', $titulare->materia05, ['class' => 'form-control' . ($errors->has('materia05') ? ' is-invalid' : ''), 'placeholder' => 'Materia05']) }}
+            {{ Form::label('Plan de estudios') }}
+            {{ Form::select('materia05',$estudio, $titulare->materia05, ['class' => 'form-control' . ($errors->has('materia05') ? ' is-invalid' : ''), 'placeholder' => 'Seleccione una Materia']) }}
             {!! $errors->first('materia05', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('TiposDocente') }}
-            {{ Form::text('TiposDocente', $titulare->TiposDocente, ['class' => 'form-control' . ($errors->has('TiposDocente') ? ' is-invalid' : ''), 'placeholder' => 'Tiposdocente']) }}
+            {{ Form::label('Tipo de Docente') }}
+            {{ Form::select('TiposDocente',$tipo, $titulare->TiposDocente, ['class' => 'form-control' . ($errors->has('TiposDocente') ? ' is-invalid' : ''), 'placeholder' => 'Tiposdocente']) }}
             {!! $errors->first('TiposDocente', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('Dedicacion') }}
-            {{ Form::text('Dedicacion', $titulare->Dedicacion, ['class' => 'form-control' . ($errors->has('Dedicacion') ? ' is-invalid' : ''), 'placeholder' => 'Dedicacion']) }}
+            {{ Form::label('A tiempo:') }}
+            {{ Form::select('Dedicacion',$dedicacion, $titulare->Dedicacion, ['class' => 'form-control' . ($errors->has('Dedicacion') ? ' is-invalid' : ''), 'placeholder' => 'Dedicacion']) }}
             {!! $errors->first('Dedicacion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

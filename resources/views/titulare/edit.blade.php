@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('template_title')
     Update Titulare
@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Titulare</span>
+                        <span class="card-title">Actualizar docente</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('titulares.update', $titulare->id) }}"  role="form" enctype="multipart/form-data">
