@@ -37,7 +37,7 @@ Universidad Boliviana, ha sido //DESIG REASIG  docente a tiempo COMPLETO por la 
 2022 (SEMESTRES I Y II ) debe iniciar sus actividades a partir del 27 de abril teniendo <br>
 a su cargo las siguientes asignaturas<br>
 <br>
-PENDIENTE VINCULAR CON PLAN DE ESTUDIOS 
+PENDIENTE VINCULAR CON PLAN DE ESTUDIOS .
 
 <div class="page-break"></div>
     

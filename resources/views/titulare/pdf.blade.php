@@ -20,7 +20,7 @@
     
     Código  no entender<br> 
     Señor 
-
+    <p>aqui haciendo pruebas papu</p>
     @foreach ($titulares as $titulare)
                                         <tr>
                                         
