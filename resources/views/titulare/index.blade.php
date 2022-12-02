@@ -17,11 +17,15 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('titulares.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                <a href="{{ route('titulares.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="rigth" >
+                                  {{ __('Crear designacion') }}
                                 </a>
-                                <a href="{{ route('titulares.pdf') }}" class="btn btn-warning btn-sm float-right"  data-placement="left" >
-                                    {{ __('Generar PDF') }}
+                                
+                                <a href="{{ route('titulares.pdf') }}" class="btn btn-ligth btn-sm float-right"  data-placement="left" >
+                                    
+                                    <i class='fas fa-file-pdf' style='font-size:30px;color:red'></i>
+                                    <!-- <i class="fa-file-pdf-o" style="color:#111010;"  width="8" height="8"></i> //-->
+                                    {{ __('PDF') }}
                                   </a>
                               </div>
                         </div>

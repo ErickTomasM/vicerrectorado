@@ -32,13 +32,16 @@
             {!! $errors->first('Carrera', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
+            
             {{ Form::label('Gestion') }}
-            {{ Form::text('Gestion', $designacion->Gestion, ['class' => 'form-control' . ($errors->has('Gestion') ? ' is-invalid' : ''), 'placeholder' => 'Gestion']) }}
+            
+            {{ Form::select('Gestion',$gestion, $designacion->Gestion, ['class' => 'form-control' . ($errors->has('Gestion') ? ' is-invalid' : ''), 'placeholder' => 'Gestion']) }}
             {!! $errors->first('Gestion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
+            
             {{ Form::label('Semestre') }}
-            {{ Form::text('Semestre', $designacion->Semestre, ['class' => 'form-control' . ($errors->has('Semestre') ? ' is-invalid' : ''), 'placeholder' => 'Semestre']) }}
+            {{ Form::select('Semestre', $semestre ,$designacion->Semestre, ['class' => 'form-control' . ($errors->has('Semestre') ? ' is-invalid' : ''), 'placeholder' => 'Semestre']) }}
             {!! $errors->first('Semestre', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

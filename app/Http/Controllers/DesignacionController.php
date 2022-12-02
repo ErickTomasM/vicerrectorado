@@ -48,6 +48,9 @@ class DesignacionController extends Controller
         $docentes = Docente::pluck('Nombres','id');
         $fac = ['Facultad de Dercho', 'Facultad de Ciencias Puras', 'Facultad de Ciencias Sociales Humanisticas','Facultad de Medicina'];
         $prueba = Estudio::pluck('Materia', 'id');
+        $semestre = ['Gestion Academica', 'Semestre I', 'Semestre II'];
+        $gestion=['2022', '2023'];
+        
         #$carrera = ['Sistemas','Sistemas Tupiza', 'Odontologia','Ingenieria Minera', 'Ingenieria de Procesos en Materia Primas', 'Mediciana', 'Enfermeria', 'Enfermeria Villazon','Derecho','Derecho Uncia','Derecho Tupiza','Ingenieria Geologica', 'Ingenieria del Medio Ambiente'];
          #$carrera = [];
         /*if ($fac == 'Facultad de Derecho') {
@@ -57,7 +60,7 @@ class DesignacionController extends Controller
             $carrera = ['Matematica','Estadistica', 'Ingenieria Informatica', 'Quimica', 'Fisica'];
         }*/
         
-        return view('designacion.create', compact('designacion', 'docentes', 'fac', 'prueba'));
+        return view('designacion.create', compact('designacion', 'docentes', 'fac', 'prueba', 'semestre', 'gestion'));
         
         
     }
@@ -100,9 +103,13 @@ class DesignacionController extends Controller
     public function edit($id)
     {
         $designacion = Designacion::find($id);
-        $docentes = Docente::pluck('Nombres', 'id');
+        $docentes = Docente::pluck('Nombres','id');
+        $fac = ['Facultad de Dercho', 'Facultad de Ciencias Puras', 'Facultad de Ciencias Sociales Humanisticas','Facultad de Medicina'];
+        $prueba = Estudio::pluck('Materia', 'id');
+        $semestre = ['Gestion Academica', 'Semestre I', 'Semestre II'];
+        $gestion=[2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040];
 
-        return view('designacion.edit', compact('designacion','docentes'));
+        return view('designacion.edit', compact('designacion','docentes', 'fac', 'prueba', 'semestre', 'gestion'));
     }
 
     /**

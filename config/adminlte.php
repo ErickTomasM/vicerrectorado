@@ -327,7 +327,7 @@ return [
         [
             'text' => 'Crear Designacion',
             'url'  => 'designacions',
-            'icon' => 'fas fa-fw fa-people-line',
+            'icon' => 'far fa-fw fa-file',
         ],
 //Tipos de Docentes 
 

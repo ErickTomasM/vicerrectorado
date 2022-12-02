@@ -34,12 +34,19 @@ class TitulareController extends Controller
 
     public function pdf()
     {
-        $titular = Designacion::paginate();
-        $pdf = PDF::loadView('titulare.pdf', ['titulares'=>$titular]);
+        $titulares = Titulare::paginate();
+        
+        $pdf = PDF::loadView('titulare.pdf', ['titulares'=>$titulares]);
         //$pdf->loadHTML('<h1>Test</h1>');
         return $pdf->stream();
         
        //return view('designacion.pdf', compact('designacions'));
+    }
+    public function año(){
+
+        $designacion=Designacion::all();
+        //$años = [date('Y',$designacion->FechaDesignacion)];
+        return view('titulare.pdf', compact('designacion'));
     }
 
     public function prueba()
