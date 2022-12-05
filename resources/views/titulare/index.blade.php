@@ -17,8 +17,10 @@
                             </span>
 
                              <div class="float-right">
+                                @can('titulares.create')
                                 <a href="{{ route('titulares.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="rigth" >
                                   {{ __('Crear designacion') }}
+                                  @endcan
                                 </a>
                                 
                                 <a href="{{ route('titulares.pdf') }}" class="btn btn-ligth btn-sm float-right"  data-placement="left" >
@@ -96,7 +98,7 @@
                                                     @endcan
                                                     @csrf
                                                     @method('DELETE')
-                                                    @can('titulares.destroy')
+                                                    @can('titulares.delete')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                     @endcan
                                                 </form>

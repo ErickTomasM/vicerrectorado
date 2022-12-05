@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Consultore;
 use Illuminate\Http\Request;
 use App\Models\Estudio;
+use App\Models\Docente;
+use App\Models\Designacion;
 
 /**
  * Class ConsultoreController
@@ -41,8 +43,10 @@ class ConsultoreController extends Controller
         $consultore = new Consultore();
         $plan = Estudio::pluck('Materia', 'id');
         $dedicacion = ['','A Tiempo Completo', 'A Tiempo Horario'];
+        $docente = Docente::pluck('Nombres', 'id');
+        $designacion = Designacion::pluck('Dictamen', 'id');
         
-        return view('consultore.create', compact('consultore','plan', 'dedicacion' ));
+        return view('consultore.create', compact('consultore','plan', 'dedicacion', 'docente', 'designacion' ));
     }
 
     /**

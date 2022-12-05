@@ -78,7 +78,7 @@
                                                     
                                                     @csrf
                                                     @method('DELETE')
-                                                    @can('docentes.destroy')
+                                                    @can('docentes.delete')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                     @endcan
                                                 </form>

@@ -48,8 +48,9 @@ class DesignacionController extends Controller
         $docentes = Docente::pluck('Nombres','id');
         $fac = ['Facultad de Dercho', 'Facultad de Ciencias Puras', 'Facultad de Ciencias Sociales Humanisticas','Facultad de Medicina'];
         $prueba = Estudio::pluck('Materia', 'id');
-        $semestre = ['Gestion Academica', 'Semestre I', 'Semestre II'];
-        $gestion=['2022', '2023'];
+        $seme = ['Gestion Academica', 'Semestre I', 'Semestre II'];
+        $gesti = ['','2022','2023','2024'];
+        
         
         #$carrera = ['Sistemas','Sistemas Tupiza', 'Odontologia','Ingenieria Minera', 'Ingenieria de Procesos en Materia Primas', 'Mediciana', 'Enfermeria', 'Enfermeria Villazon','Derecho','Derecho Uncia','Derecho Tupiza','Ingenieria Geologica', 'Ingenieria del Medio Ambiente'];
          #$carrera = [];
@@ -60,7 +61,7 @@ class DesignacionController extends Controller
             $carrera = ['Matematica','Estadistica', 'Ingenieria Informatica', 'Quimica', 'Fisica'];
         }*/
         
-        return view('designacion.create', compact('designacion', 'docentes', 'fac', 'prueba', 'semestre', 'gestion'));
+        return view('designacion.create', compact('designacion', 'docentes', 'fac', 'prueba', 'seme', 'gesti'));
         
         
     }
@@ -107,7 +108,7 @@ class DesignacionController extends Controller
         $fac = ['Facultad de Dercho', 'Facultad de Ciencias Puras', 'Facultad de Ciencias Sociales Humanisticas','Facultad de Medicina'];
         $prueba = Estudio::pluck('Materia', 'id');
         $semestre = ['Gestion Academica', 'Semestre I', 'Semestre II'];
-        $gestion=[2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040];
+        $gestion=['2022', '2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030', '2031', '2032', '2033', '2034', '2035', '2036', '2037', '2038,', '2039', '2040'];
 
         return view('designacion.edit', compact('designacion','docentes', 'fac', 'prueba', 'semestre', 'gestion'));
     }

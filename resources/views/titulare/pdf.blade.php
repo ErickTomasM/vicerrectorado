@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <style type="text/css"> 
+        .uno { text-transform: capitalize;}   
+        .transformacion2 { text-transform: uppercase;}   
+        .transformacion3 { text-transform: lowercase;}   
+        </style> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
@@ -11,13 +16,19 @@
     @foreach ($titulares as $titulare)
     <div style="page-break-after: always">
     Potosí 
-    <text>{{ $titulare->designacion->FechaDesignacion }}</text><br>
+    {{ $titulare->designacion->FechaDesignacion }}<br>
     <?php
-        $anio = $titulare->designacion->FechaDesignacion;
-        $anio =date('Y');
+       echo $anio = $titulare->designacion->FechaDesignacion; echo "<br>";
+       $a = date('Y');
+       echo $a;
+        
+       $t = $titulare->TipoDocente;
+       echo $t;
+      
     ?>  
     
     <br>
+    <p>
     CITE: UATF/DCE/CAR {{$titulare->id}} <br><br><br><br>
     Señor <br>  {{$titulare->docente->Titulo}}.
                 {{ $titulare->docente->Nombres }} 
@@ -26,17 +37,32 @@
     Presente <br>
      De nuestra mayor considereación<br><br>
    
-    Por Resolución del Honorable Consejo Facultativo de .........N°<text> {{ $titulare->designacion->Resolucion }} </text>/<?php echo $anio;?> 
-    nos permitimos comunicarle que en su condición de <text style="text-transform: uppercase;">{{ $titulare->docente->TipoDocente }}</text>
-    de la carrera //NOMBRE  
+    Por Resolución del Honorable Consejo Facultativo de <text style="text-transform: capitalize;">{{$titulare->designacion->Facultad}}</text>
+        N°{{ $titulare->designacion->Resolucion }} / {{$titulare->designacion->Gestion}}
+    nos permitimos comunicarle que en su condición de Docente {{$titulare->TiposDocente}}  {{$titulare->Dedicacion}}
+    
+    <text style="text-transform: uppercase;">{{ $titulare->docente->TiposDocente }}</text>
+    de la carrera de {{$titulare->designacion->Carrera}}  <text style="text-transform: uppercase;}}
     <text style="text-transform: uppercase;"> </text>
     en concordancia con el Articulo 11 del Reglamento del Régimen Académico Docente de la <br>
-    Universidad Boliviana, ha sido //DESIG REASIG  docente a tiempo COMPLETO por la gestión <br>
-    2022 (SEMESTRES I Y II ) debe iniciar sus actividades a partir del 27 de abril teniendo <br>
+    Universidad Boliviana, ha sido DESIGNADO como docente a {{$titulare->Dedicacion}} por la gestión <br>
+    {{$titulare->designacion->Gestion}} {{$titulare->designacion->Semestre}} debe iniciar sus actividades a partir de la fecha <br>
     a su cargo las siguientes asignaturas<br>
     <br>
-    PENDIENTE VINCULAR CON PLAN DE ESTUDIOS .
+                                {{$titulare->estudio->Materia}}
+                                           
+                                <br>{{$titulare->materia01}}			
+								<br>{{ $titulare->materia02 }}
+                                <br>{{ $titulare->materia03 }}
+                                <br>{{ $titulare->materia04 }}
+                                <br>{{ $titulare->materia02 }}
+                                <br>{{ $titulare->materia05 }}
     
+    para lo temas de horarios y otros aspectos inherentes a sus funciones academicas, se le insinua coordinar con la carrera. <br>
+    Con este grato saludo a usted <br>
+    Atentamentente
+
+</p>
     </div>
         
     @endforeach

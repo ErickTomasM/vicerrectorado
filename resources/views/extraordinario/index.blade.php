@@ -17,9 +17,11 @@
                             </span>
 
                              <div class="float-right">
+                                @can('extraordinarios.create')
                                 <a href="{{ route('extraordinarios.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
+                                @endcan
                               </div>
                         </div>
                     </div>
@@ -90,7 +92,7 @@
                                                     @endcan
                                                     @csrf
                                                     @method('DELETE')
-                                                    @can('extraordinarios.destroy')
+                                                    @can('extraordinarios.delete')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                     @endcan
                                                 </form>

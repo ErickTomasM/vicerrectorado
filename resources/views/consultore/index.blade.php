@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('template_title')
     Consultore
@@ -17,9 +17,11 @@
                             </span>
 
                              <div class="float-right">
+                                @can('consultores.create')
                                 <a href="{{ route('consultores.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
+                                @endcan
                               </div>
                         </div>
                     </div>
@@ -72,11 +74,11 @@
                                                     <a class="btn btn-sm btn-primary " href="{{ route('consultores.show',$consultore->id) }}"><i class="fa fa-fw fa-eye"></i> ver</a>
                                                     @endcan
                                                     @can('consultores.edit')
-                                                    <a class="btn btn-sm btn-success" href="{{ route('consultores.edit',$consultore->id) }}"><i class="fa fa-fw fa-edit"></i> Editar/a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('consultores.edit',$consultore->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @endcan
                                                     @csrf
                                                     @method('DELETE')
-                                                    @can('consultores.destroy')
+                                                    @can('consultores.delete')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                     @endcan
                                                 </form>

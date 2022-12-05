@@ -328,12 +328,13 @@ return [
             'text' => 'Crear Designacion',
             'url'  => 'designacions',
             'icon' => 'far fa-fw fa-file',
+            'can' => 'designacions.index',
         ],
 //Tipos de Docentes 
-
 [
     'text'    => 'Designacion Docente',
     'icon'    => 'fas fa-users fa-fw',
+    'can' => 'designacions.index',
     'submenu' => [
         [
             'text' => 'Titulares',
@@ -367,27 +368,34 @@ return [
             'text' => 'Infraestructura',
             'url'  => 'infraestructuras',
             'icon' => 'fas fa-fw fa-building',
+            'can' => 'designacions.index',
+            'can' => 'designacions.index',
         ],
         [
             'text' => 'Plan de Estudios',
             'url'  => 'estudios',
-            'icon' => 'fas fa-fw fa-building',
+            'icon' => 'fas fa-fw fa-university',
+            'can' => 'estudios.index',
         ],
         
         [
             'text' => 'Reasignaciones',
             'url'  => 'reasignacions',
             'icon' => 'fas fa-fw fa-people-line',
+            'can' => 'designacions.index',
         ],
         [
             'text' => 'Horarios',
             'url'  => 'horarios',
             'icon' => 'fas fa-fw fa-calendar-days',
+            'can' => 'designacions.index',
         ],
         [
             'text' => 'Pruebas',
             'url'  => 'horarios',
-            'icon' => 'fas fa-fw fa-calendar-days',
+            'icon' => 'fas fa-fw fa-user',
+            
+            
         ],
        
         

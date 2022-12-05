@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('template_title')
     Create Consultore
@@ -16,6 +16,7 @@
                         <span class="card-title">Create Consultore</span>
                     </div>
                     <div class="card-body">
+                    
                         <form method="POST" action="{{ route('consultores.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
