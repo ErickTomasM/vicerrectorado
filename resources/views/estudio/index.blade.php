@@ -40,8 +40,9 @@
                                         
 										<th>Sigla</th>
 										<th>Materia</th>
-										<th>Horast</th>
-										<th>Horasp</th>
+										<th>Horas Teoricas</th>
+										<th>Horas Practicas</th>
+                                        <th>Horas Totales</th>
 
                                         <th></th>
                                     </tr>
@@ -55,6 +56,14 @@
 											<td>{{ $estudio->Materia }}</td>
 											<td>{{ $estudio->Horast }}</td>
 											<td>{{ $estudio->Horasp }}</td>
+
+                                            <td>
+                                                <?php 
+                                                      $a =   $estudio->Horast + $estudio->Horasp;
+                                                     echo $a;
+                                                ?>
+                                                
+                                            </td>
 
                                             <td>
                                                 <form action="{{ route('estudios.destroy',$estudio->id) }}" method="POST">

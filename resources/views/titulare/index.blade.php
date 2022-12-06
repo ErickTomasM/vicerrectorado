@@ -77,9 +77,9 @@
                                                 {{$titulare->estudio->Materia}}
                                             </td>
                                             <td>
-                                                {{$titulare->materia01}}
-                                            </td>
+                                                {{ $titulare->materia01}}
                                                 
+                                            </td>
 											
 											<td>{{ $titulare->materia02 }}</td>
 											<td>{{ $titulare->materia03 }}</td>

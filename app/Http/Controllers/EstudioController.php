@@ -34,6 +34,7 @@ class EstudioController extends Controller
         $estudio = new Estudio();
         return view('estudio.create', compact('estudio'));
     }
+    
 
     /**
      * Store a newly created resource in storage.

@@ -42,12 +42,7 @@ class TitulareController extends Controller
         
        //return view('designacion.pdf', compact('designacions'));
     }
-    public function año(){
-
-        $designacion=Designacion::all();
-        //$años = [date('Y',$designacion->FechaDesignacion)];
-        return view('titulare.pdf', compact('designacion'));
-    }
+    
 
     public function prueba()
     {
@@ -64,11 +59,13 @@ class TitulareController extends Controller
     {
         $titulare = new Titulare();
         $docente = Docente::pluck('Nombres', 'id');
+        
         $estudio = Estudio::pluck('Materia', 'id');
+        //$probando = Estudio::find();
         $designacion = Designacion::pluck('Dictamen', 'id');
         $dedicacion = ['','A Tiempo Completo', 'A Tiempo Horario'];
         $tipo = ['','Extraordinario','Contratado','Ordinario Titular'];
-        return view('titulare.create', compact('titulare', 'docente', 'estudio', 'designacion', 'dedicacion', 'tipo'));
+        return view('titulare.create', compact('titulare', 'docente','estudio', 'designacion', 'dedicacion', 'tipo'));
     }
 
     /**

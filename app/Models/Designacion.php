@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $created_at
  * @property $updated_at
  *
+ * @property Consultore[] $consultores
  * @property Extraordinario[] $extraordinarios
  * @property Reasignacion[] $reasignacions
  * @property Titulare[] $titulares
@@ -48,6 +49,14 @@ class Designacion extends Model
     protected $fillable = ['FechaDesignacion','Resolucion','Dictamen','NumeroCarta','Facultad','Carrera','Gestion','Semestre'];
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function consultores()
+    {
+        return $this->hasMany('App\Models\Consultore', 'designacion_id', 'id');
+    }
+    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

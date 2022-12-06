@@ -29,7 +29,7 @@
     
     <br>
     <p>
-    CITE: UATF/DCE/CAR {{$titulare->id}} <br><br><br><br>
+    CITE: UATF/DCE/CAR {{$titulare->id}} <br><br><br>
     Señor <br>  {{$titulare->docente->Titulo}}.
                 {{ $titulare->docente->Nombres }} 
                {{ $titulare->docente->ApellidoPaterno }}
@@ -49,15 +49,28 @@
     {{$titulare->designacion->Gestion}} {{$titulare->designacion->Semestre}} debe iniciar sus actividades a partir de la fecha <br>
     a su cargo las siguientes asignaturas<br>
     <br>
-                                {{$titulare->estudio->Materia}}
-                                           
-                                <br>{{$titulare->materia01}}			
-								<br>{{ $titulare->materia02 }}
-                                <br>{{ $titulare->materia03 }}
-                                <br>{{ $titulare->materia04 }}
-                                <br>{{ $titulare->materia02 }}
-                                <br>{{ $titulare->materia05 }}
+   
+    <ol type= "none">
+
+    <li>
+        {{$titulare->estudio->Materia}}
+    </li>
+    <li>
+        {{ $titulare->materia01}}
+        
+    </li>
     
+    <li>{{ $titulare->materia02 }}</li>
+    <li>{{ $titulare->materia03 }}</li>
+    <li>{{ $titulare->materia04 }}</li>
+    <li>{{ $titulare->materia05 }}</li>
+    
+</ol>
+<?php 
+    
+    echo $a;
+?>
+
     para lo temas de horarios y otros aspectos inherentes a sus funciones academicas, se le insinua coordinar con la carrera. <br>
     Con este grato saludo a usted <br>
     Atentamentente

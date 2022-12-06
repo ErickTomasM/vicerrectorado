@@ -23,8 +23,12 @@
         </div>
         <div class="form-group">
             {{ Form::label('Facultad') }}
-            {{ Form::select('Facultad',$fac, $designacion->Facultad, ['class' => 'form-control' . ($errors->has('Facultad') ? ' is-invalid' : ''), 'placeholder' => 'Facultad']) }}
+            
+
+            {{ Form::select('Facultad',$facultad ,$designacion->Facultad, ['class' => 'form-control' . ($errors->has('Facultad') ? ' is-invalid' : ''), 'placeholder' => 'Facultad']) }}
             {!! $errors->first('Facultad', '<div class="invalid-feedback">:message</div>') !!}
+            
+            
         </div>
         <div class="form-group">
             {{ Form::label('Carrera') }}
@@ -32,16 +36,13 @@
             {!! $errors->first('Carrera', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            
             {{ Form::label('Gestion') }}
-            
-            {{ Form::select('Gestion',$gesti, $designacion->Gestion, ['class' => 'form-control' . ($errors->has('Gestion') ? ' is-invalid' : ''), 'placeholder' => 'Gestion']) }}
+            {{ Form::select('Gestion',$gestion, $designacion->Gestion, ['class' => 'form-control' . ($errors->has('Gestion') ? ' is-invalid' : ''), 'placeholder' => 'Gestion']) }}
             {!! $errors->first('Gestion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            
             {{ Form::label('Semestre') }}
-            {{ Form::select('Semestre', $seme ,$designacion->Semestre, ['class' => 'form-control' . ($errors->has('Semestre') ? ' is-invalid' : ''), 'placeholder' => 'Semestre']) }}
+            {{ Form::select('Semestre',$semestre, $designacion->Semestre, ['class' => 'form-control' . ($errors->has('Semestre') ? ' is-invalid' : ''), 'placeholder' => 'Semestre']) }}
             {!! $errors->first('Semestre', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
