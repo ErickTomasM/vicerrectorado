@@ -18,6 +18,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property $materiaC05
  * @property $Dedicacion
  * @property $contrato
+ * @property $created_at
+ * @property $updated_at
  *
  * @property Designacion $designacion
  * @property Docente $docente

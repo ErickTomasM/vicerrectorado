@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Consultore;
 use Illuminate\Http\Request;
+use App\Models\Estudio;
 use App\Models\Docente;
 use App\Models\Designacion;
-use App\Models\Estudio;
 
 /**
  * Class ConsultoreController
@@ -22,11 +22,17 @@ class ConsultoreController extends Controller
     public function index()
     {
         $consultores = Consultore::paginate();
+        
 
         return view('consultore.index', compact('consultores'))
             ->with('i', (request()->input('page', 1) - 1) * $consultores->perPage());
     }
+    public function guardar(Request $request){
+        if($request->hasfile("urlpdf")){
+            $file=$request->file("urlpdf");
+        }
 
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -35,14 +41,15 @@ class ConsultoreController extends Controller
     public function create()
     {
         $consultore = new Consultore();
-
+        /*
         $plan = Estudio::pluck('Materia', 'id');
         $dedicacion = ['','A Tiempo Completo', 'A Tiempo Horario'];
         $docente = Docente::pluck('Nombres', 'id');
-        $designacion = Designacion::pluck('Dictamen', 'id');
-
-        return view('consultore.create', compact('consultore', 'plan', 'dedicacion', 'docente', 'designacion'));
+        $designacion = Designacion::pluck('Dictamen', 'id');*/
+      
+        return view('consultore.create', compact('consultore'));
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -53,11 +60,17 @@ class ConsultoreController extends Controller
     public function store(Request $request)
     {
         request()->validate(Consultore::$rules);
+       // $consultore = request()->except('_token');
+        if($request->hasfile('contrato')) {
+            $consultore['contrato']=$request->file('contrato')->store('local/consultores');
+        }
 
-        $consultore = Consultore::create($request->all());
-
-        return redirect()->route('consultores.index')
-            ->with('success', 'Consultore created successfully.');
+        /*return redirect()->route('consultores.index')
+           ->with('success', 'Consultore created successfully.');*/
+           Consultore:: insert($consultore);
+        //return  response()->json($consultore);
+         return redirect()->route('consultores.index')
+            ->with('success', 'Docente consultor creado exitosamente');
     }
 
     /**
@@ -69,7 +82,7 @@ class ConsultoreController extends Controller
     public function show($id)
     {
         $consultore = Consultore::find($id);
-
+        
         return view('consultore.show', compact('consultore'));
     }
 
@@ -82,14 +95,20 @@ class ConsultoreController extends Controller
     public function edit($id)
     {
         $consultore = Consultore::find($id);
-
+    /*
         $plan = Estudio::pluck('Materia', 'id');
+
         $dedicacion = ['','A Tiempo Completo', 'A Tiempo Horario'];
+
         $docente = Docente::pluck('Nombres', 'id');
+
         $designacion = Designacion::pluck('Dictamen', 'id');
-        return view('consultore.edit', compact('consultore', 'plan', 'docente', 'dedicacion', 'designacion'));
+        
+        */
+        return view('consultore.edit', compact('consultore'));
     }
 
+    
     /**
      * Update the specified resource in storage.
      *
@@ -100,8 +119,10 @@ class ConsultoreController extends Controller
     public function update(Request $request, Consultore $consultore)
     {
         request()->validate(Consultore::$rules);
+        
 
         $consultore->update($request->all());
+        
 
         return redirect()->route('consultores.index')
             ->with('success', 'Consultore updated successfully');

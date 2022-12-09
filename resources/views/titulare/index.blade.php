@@ -45,9 +45,9 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Docente Id</th>
-										<th>Designacion Id</th>
-                                        <th>Estudio Id</th>
+										<th>Docente</th>
+										<th>Dictamen</th>
+                                        <th>Materia</th>
     									<th>Materia01</th>
 										<th>Materia02</th>
 										<th>Materia03</th>
@@ -91,15 +91,15 @@
                                             <td>
                                                 <form action="{{ route('titulares.destroy',$titulare->id) }}" method="POST">
                                                     @can('titulares.show')
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('titulares.show',$titulare->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('titulares.show',$titulare->id) }}"><i class="fa fa-fw fa-eye"></i> </a>
                                                     @endcan
                                                     @can('titulares.edit')
-                                                    <a class="btn btn-sm btn-success" href="{{ route('titulares.edit',$titulare->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('titulares.edit',$titulare->id) }}"><i class="fa fa-fw fa-edit"></i> </a>
                                                     @endcan
                                                     @csrf
                                                     @method('DELETE')
                                                     @can('titulares.delete')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> </button>
                                                     @endcan
                                                 </form>
                                             </td>

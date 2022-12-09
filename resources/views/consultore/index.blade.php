@@ -17,11 +17,9 @@
                             </span>
 
                              <div class="float-right">
-                                @can('consultores.create')
                                 <a href="{{ route('consultores.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
-                                @endcan
                               </div>
                         </div>
                     </div>
@@ -57,9 +55,13 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $consultore->docente_id }}</td>
-											<td>{{ $consultore->designacion_id }}</td>
+											<td>{{ $consultore->docente->Nombres }}
+                                                {{ $consultore->docente->ApellidoPaterno }}
+                                                {{ $consultore->docente->ApellidoMaterno }}
+                                            </td>
+											<td>{{ $consultore->designacion->Dictamen}}</td>
 											<td>{{ $consultore->estudio->Materia }}</td>
+                                            
 											<td>{{ $consultore->materiaC01 }}</td>
 											<td>{{ $consultore->materiaC02 }}</td>
 											<td>{{ $consultore->materiaC03 }}</td>
@@ -70,17 +72,11 @@
 
                                             <td>
                                                 <form action="{{ route('consultores.destroy',$consultore->id) }}" method="POST">
-                                                    @can('consultores.show')
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('consultores.show',$consultore->id) }}"><i class="fa fa-fw fa-eye"></i> ver</a>
-                                                    @endcan
-                                                    @can('consultores.edit')
-                                                    <a class="btn btn-sm btn-success" href="{{ route('consultores.edit',$consultore->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
-                                                    @endcan
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('consultores.show',$consultore->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('consultores.edit',$consultore->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    @can('consultores.delete')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
-                                                    @endcan
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
                                             </td>
                                         </tr>

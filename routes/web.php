@@ -21,11 +21,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('designacions/pdf', [App\Http\Controllers\DesignacionController::class, 'pdf'])->name('designacions.pdf');
-Route::get('designacions/pdf', [App\Http\Controllers\TitulareController::class, 'pdf'])->name('titulares.pdf');
+//Route::get('designacions/pdf', [App\Http\Controllers\DesignacionController::class, 'pdf'])->name('designacions.pdf');
+Route::get('titulares/pdf', [App\Http\Controllers\TitulareController::class, 'pdf'])->name('titulares.pdf');
 
 
-Auth::routes();
+
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

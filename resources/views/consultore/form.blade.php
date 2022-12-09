@@ -3,17 +3,17 @@
         
         <div class="form-group">
             {{ Form::label('docente_id') }}
-            {{ Form::select('docente_id',$docente, $consultore->docente_id, ['class' => 'form-control' . ($errors->has('docente_id') ? ' is-invalid' : ''), 'placeholder' => 'Docente Id']) }}
+            {{ Form::select('docente_id', $docente, $consultore->docente_id, ['class' => 'form-control' . ($errors->has('docente_id') ? ' is-invalid' : ''), 'placeholder' => 'Docente Id']) }}
             {!! $errors->first('docente_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('designacion_id') }}
-            {{ Form::select('designacion_id', $designacion,$consultore->designacion_id, ['class' => 'form-control' . ($errors->has('designacion_id') ? ' is-invalid' : ''), 'placeholder' => 'Mediante el Dictamen']) }}
+            {{ Form::select('designacion_id',$designacion, $consultore->designacion_id, ['class' => 'form-control' . ($errors->has('designacion_id') ? ' is-invalid' : ''), 'placeholder' => 'Segun el dictamen']) }}
             {!! $errors->first('designacion_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('estudio_id') }}
-            {{ Form::select('estudio_id',$plan, $consultore->estudio_id, ['class' => 'form-control' . ($errors->has('estudio_id') ? ' is-invalid' : ''), 'placeholder' => 'Estudio Id']) }}
+            {{ Form::select('estudio_id', $plan ,$consultore->estudio_id, ['class' => 'form-control' . ($errors->has('estudio_id') ? ' is-invalid' : ''), 'placeholder' => 'Estudio Id']) }}
             {!! $errors->first('estudio_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -33,28 +33,28 @@
         </div>
         <div class="form-group">
             {{ Form::label('materiaC04') }}
-            {{ Form::text('materiaC04', $consultore->materiaC04, ['class' => 'form-control' . ($errors->has('materiaC04') ? ' is-invalid' : ''), 'placeholder' => 'Materiac04']) }}
+            {{ Form::select('materiaC04',$plan, $consultore->materiaC04, ['class' => 'form-control' . ($errors->has('materiaC04') ? ' is-invalid' : ''), 'placeholder' => 'Materiac04']) }}
             {!! $errors->first('materiaC04', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('materiaC05') }}
-            {{ Form::text('materiaC05', $consultore->materiaC05, ['class' => 'form-control' . ($errors->has('materiaC05') ? ' is-invalid' : ''), 'placeholder' => 'Materiac05']) }}
+            {{ Form::select('materiaC05',$plan, $consultore->materiaC05, ['class' => 'form-control' . ($errors->has('materiaC05') ? ' is-invalid' : ''), 'placeholder' => 'Materiac05']) }}
             {!! $errors->first('materiaC05', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            f
             {{ Form::label('Dedicacion') }}
-            {{ Form::select('Dedicacion', $dedicacion,$consultore->Dedicacion, ['class' => 'form-control' . ($errors->has('Dedicacion') ? ' is-invalid' : ''), 'placeholder' => 'Dedicacion']) }}
+            {{ Form::select('Dedicacion',$dedicacion, $consultore->Dedicacion, ['class' => 'form-control' . ($errors->has('Dedicacion') ? ' is-invalid' : ''), 'placeholder' => 'Dedicacion']) }}
             {!! $errors->first('Dedicacion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('contrato') }}
-            {{ Form::file('contrato', $consultore->contrato, ['id'=>'contrato','name'=>'contrato','class' => 'form-control' . ($errors->has('contrato') ? ' is-invalid' : ''), 'placeholder' => 'Contrato']) }}
-            {!! $errors->first('contrato', '<div class="invalid-feedback">:message</div>') !!}
+            
+            <input type="file"  name="contrato" id="contrato">
+            
         </div>
 
     </div>
-    <div class="box-footer mt20">
+    <div class="form-group">
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </div>
