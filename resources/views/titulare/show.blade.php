@@ -60,6 +60,9 @@
                             <strong>Dedicacion:</strong>
                             {{ $titulare->Dedicacion }}
                         </div>
+                        <div> 
+                            <img src="firma.png" alt="">
+                        </div>
 
                     </div>
                 </div>

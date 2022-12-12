@@ -34,7 +34,8 @@ class DocenteController extends Controller
     public function create()
     {
         $docente = new Docente();
-        return view('docente.create', compact('docente'));
+        $titulo  = ['', 'Arq.', 'Lic.', 'Ing.', 'Dr.', 'Abog.'];
+        return view('docente.create', compact('docente', 'titulo'));
     }
 
     /**

@@ -20,10 +20,9 @@ return new class extends Migration
             $table->string('Nombres');
             $table->string('ApellidoPaterno');
             $table->string('ApellidoMaterno');
-            $table->string('ci');
+            $table->string('ci')->unique();
             $table->string('Telefono');
-            $table->string('Titulo');
-            
+            $table->enum('Titulo', ['Arq.', 'Lic.', 'Ing.', 'Dr.', 'Abog.'])->default('Arq.', 'Lic.', 'Ing.', 'Dr.', 'Abog.');
             $table->timestamps();
         });
     }

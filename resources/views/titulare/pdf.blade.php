@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <style type="text/css"> 
         .uno { text-transform: capitalize;}   
-        .transformacion2 { text-transform: uppercase;}   
-        .transformacion3 { text-transform: lowercase;}   
+        .dos { text-transform: uppercase;}   
+        .tres { text-transform: lowercase;}   
         </style> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -16,38 +16,56 @@
     @foreach ($titulares as $titulare)
     <div style="page-break-after: always">
     Potosí 
-    {{ $titulare->designacion->FechaDesignacion }}<br>
+    {{ $titulare->designacion->FechaDesignacion }}
     <?php
-       echo $anio = $titulare->designacion->FechaDesignacion; echo "<br>";
-       $a = date('Y');
-       echo $a;
+        $anio = $titulare->designacion->FechaDesignacion; echo "<br>";
         
-       $t = $titulare->TipoDocente;
-       echo $t;
-      
+       $a = date('Y');    
+       $t = $titulare->TipoDocente;     
     ?>  
     
     <br>
     <p>
     CITE: UATF/DCE/CAR {{$titulare->id}} <br><br><br>
-    Señor <br>  {{$titulare->docente->Titulo}}.
+    Señor/a   {{$titulare->docente->Titulo}} <br>
                 {{ $titulare->docente->Nombres }} 
                {{ $titulare->docente->ApellidoPaterno }}
-               {{ $titulare->docente->ApellidoMaterno }}<br><br>
-    Presente <br>
-     De nuestra mayor considereación<br><br>
+               {{ $titulare->docente->ApellidoMaterno }}<br>
+    Presente <br><br><br><br>
+    De nuestra mayor consideración:<br><br>
    
-    Por Resolución del Honorable Consejo Facultativo de <text style="text-transform: capitalize;">{{$titulare->designacion->Facultad}}</text>
-        N°{{ $titulare->designacion->Resolucion }} / {{$titulare->designacion->Gestion}}
-    nos permitimos comunicarle que en su condición de Docente {{$titulare->TiposDocente}}  {{$titulare->Dedicacion}}
-    
-    <text style="text-transform: uppercase;">{{ $titulare->docente->TiposDocente }}</text>
-    de la carrera de {{$titulare->designacion->Carrera}}  <text style="text-transform: uppercase;}}
-    <text style="text-transform: uppercase;"> </text>
-    en concordancia con el Articulo 11 del Reglamento del Régimen Académico Docente de la <br>
-    Universidad Boliviana, ha sido DESIGNADO como docente a {{$titulare->Dedicacion}} por la gestión <br>
-    {{$titulare->designacion->Gestion}} {{$titulare->designacion->Semestre}} debe iniciar sus actividades a partir de la fecha <br>
-    a su cargo las siguientes asignaturas<br>
+    Por Resolución del Honorable Consejo Facultativo de <text  style="color:#FF0000">{{$titulare->designacion->Facultad}}</text>
+        N° <text style="color:#FF0000"> {{ $titulare->designacion->Resolucion }} </text>/ {{$a = date('Y' );}},
+        nos permitimos comunicarle que en su condición de <b>  DOCENTE <text class="dos"> {{$titulare->TiposDocente}} </text> </b>
+        de la carrera de <text style="color:#FF0000">{{$titulare->designacion->Carrera}}</text> en concordancia el <text style="color:#FF0000"> Artículo
+        <?php 
+        if($titulare->TiposDocente == 'Ordinario Titular'){
+            echo '20';
+        }else{
+            if ($titulare->TiposDocente == 'Contratado') {
+                echo '19';
+            } else {
+                echo '11';
+            }
+            
+        } 
+        ?>
+        </text>
+        del Reglamento del Régimen Académico Docente de la Universidad Boliviana, ha sido designado docente 
+        <text style="color:#FF0000">{{$titulare->Dedicacion}}</text> por la gestión
+        <text style="color:#FF0000">{{$titulare->designacion->Gestion}}</text>
+        <?php 
+            
+                if ($titulare->designacion->Semestre == 'Gestion Academica') {
+                    echo '(Semestre I y Semestre II)';
+                }else {
+                    if($titulare->designacion->Semestre == 'Semestre I' || 'Semestre II'){
+                echo '('.$titulare->designacion->Semestre.')';
+                        }
+                }
+        ?>
+   , teniendo a su cargo las siguientes asignaturas:
+
     <br>
    
     <ol type= "none">
@@ -64,16 +82,17 @@
     <li>{{ $titulare->materia03 }}</li>
     <li>{{ $titulare->materia04 }}</li>
     <li>{{ $titulare->materia05 }}</li>
-    
 </ol>
-<?php 
-    
-    echo $a;
-?>
 
-    para lo temas de horarios y otros aspectos inherentes a sus funciones academicas, se le insinua coordinar con la carrera. <br>
-    Con este grato saludo a usted <br>
-    Atentamentente
+<br>
+
+Debiendo iniciar sus actividades a partir de la fecha. Para coordinar los horarios y otros 
+aspectos inherentes a sus funciones académicas, se le solicita pasar por Dirección de Carrera. <br><br>
+Con este grato motivo, saludamos a usted con las consideraciones más distinguidas. <br> <br>
+
+Atentamente,
+
+<img src="firma.png" alt="imagen 1">
 
 </p>
     </div>

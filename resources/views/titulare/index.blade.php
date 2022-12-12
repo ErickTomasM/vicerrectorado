@@ -108,10 +108,12 @@
                                 </tbody>
                             </table>
                         </div>
+                        
                     </div>
                 </div>
                 {!! $titulares->links() !!}
             </div>
         </div>
     </div>
+    <img src="firma.png" alt="">
 @endsection
