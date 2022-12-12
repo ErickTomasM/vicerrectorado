@@ -53,9 +53,14 @@ class ConsultoreController extends Controller
     public function store(Request $request)
     {
         request()->validate(Consultore::$rules);
+        //$consultore = Consultore::create($request->all());
 
-        $consultore = Consultore::create($request->all());
+        $consultore = request()->except('_token');
+        if($request->hasFile('contrato')){
+            $consultore['contrato'] = $request->file('contrato')->store('uploads', 'public');
 
+        }
+        Consultore::insert($consultore);
         return redirect()->route('consultores.index')
             ->with('success', 'Consultore created successfully.');
     }
