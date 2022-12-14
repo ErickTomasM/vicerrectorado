@@ -20,8 +20,15 @@
                                 @can('extraordinarios.create')
                                 <a href="{{ route('extraordinarios.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
+
                                 </a>
                                 @endcan
+                                <a href="{{ route('extraordinarios.pdf') }}" class="btn btn-ligth btn-sm float-right"  data-placement="left" >
+                                    
+                                    <i class='fas fa-file-pdf' style='font-size:30px;color:red'></i>
+                                    <!-- <i class="fa-file-pdf-o" style="color:#111010;"  width="8" height="8"></i> //-->
+                                    {{ __('PDF') }}
+                                  </a>
                               </div>
                         </div>
                     </div>
@@ -38,16 +45,16 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Docente Id</th>
-										<th>Designacion Id</th>
-										<th>Estudio Id</th>
-										<th>Estudio1</th>
-										<th>Estudio2</th>
-										<th>Estudio3</th>
-										<th>Estudio4</th>
-										<th>Estudio5</th>
-										<th>Tiposdocente</th>
-										<th>Dedicacion</th>
+										<th>Docente</th>
+										<th>Por el Dictamen</th>
+										<th>Asignatura</th>
+										<th>Asignatura</th>
+										<th>Asignatura</th>
+										<th>Asignatura</th>
+										<th>Asignatura</th>
+										<th>Asignatura</th>
+										<th>Tipo</th>
+										<th>A Tiempo:</th>
 										<th>Convocatoria</th>
 
                                         <th></th>
@@ -67,11 +74,11 @@
                                             
                                        
                                             <td>{{ $extraordinario->estudio1 }}
-                                                 {{ $extraordinario->estudio->Materia }}
+                                                
                                             </td>
                                            
 											<td>{{ $extraordinario->estudio2 }}
-                                            {{ $extraordinario->estudio->Materia }}
+                                           
                                             </td>
 											<td>{{ $extraordinario->estudio3 }}</td>
 											<td>{{ $extraordinario->estudio4 }}</td>

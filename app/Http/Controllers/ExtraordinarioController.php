@@ -7,6 +7,7 @@ use App\Models\Extraordinario;
 use App\Models\Docente;
 use App\Models\Estudio;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 /**
  * Class ExtraordinarioController
@@ -32,6 +33,19 @@ class ExtraordinarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function pdf()
+    {
+        $extraordinario = Extraordinario::paginate();
+       
+
+
+        $pdf = PDF::loadView('extraordinario.pdf', ['extraordinarios'=>$extraordinario]);
+        //$pdf->loadHTML('<h1>Test</h1>');
+        return $pdf->stream();
+        
+       //return view('designacion.pdf', compact('designacions'));
+    }
+
     public function create()
     {
         

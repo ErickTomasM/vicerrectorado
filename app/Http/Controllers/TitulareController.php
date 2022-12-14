@@ -35,7 +35,9 @@ class TitulareController extends Controller
     public function pdf()
     {
         $titulares = Titulare::paginate();
-        
+       
+
+
         $pdf = PDF::loadView('titulare.pdf', ['titulares'=>$titulares]);
         //$pdf->loadHTML('<h1>Test</h1>');
         return $pdf->stream();

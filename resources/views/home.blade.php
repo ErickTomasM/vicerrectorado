@@ -3,11 +3,11 @@
 @section('title', 'dashboard')
 
 @section('content_header')
-    <h1>Bienvenido</h1>
+    <h1>Bienvenido al sistema de designaciones de Vicerrectorado</h1>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <p>Adjuntar Manual de Usuario.</p>
 @stop
 
 @section('css')

@@ -92,6 +92,7 @@ class ConsultoreController extends Controller
         $dedicacion = ['','A Tiempo Completo', 'A Tiempo Horario'];
         $docente = Docente::pluck('Nombres', 'id');
         $designacion = Designacion::pluck('Dictamen', 'id');
+
         return view('consultore.edit', compact('consultore', 'plan', 'docente', 'dedicacion', 'designacion'));
     }
 

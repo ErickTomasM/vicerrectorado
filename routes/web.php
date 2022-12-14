@@ -23,6 +23,7 @@ Auth::routes();
 
 //Route::get('designacions/pdf', [App\Http\Controllers\DesignacionController::class, 'pdf'])->name('designacions.pdf');
 Route::get('titulares/pdf', [App\Http\Controllers\TitulareController::class, 'pdf'])->name('titulares.pdf');
+Route::get('extraordinarios/pdf', [App\Http\Controllers\ExtraordinarioController::class, 'pdf'])->name('extraordinarios.pdf');
 
 
 

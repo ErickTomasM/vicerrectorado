@@ -60,7 +60,7 @@ class ConsultoreController extends Controller
     public function store(Request $request)
     {
         request()->validate(Consultore::$rules);
-       // $consultore = request()->except('_token');
+        $consultore = request()->except('_token');
         if($request->hasfile('contrato')) {
             $consultore['contrato']=$request->file('contrato')->store('local/consultores');
         }

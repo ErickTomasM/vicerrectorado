@@ -36,7 +36,7 @@ class DesignacionController extends Controller
         $gestion = ['','2022','2023', '2024','2025', '2026','2027', '2028','2029', '2030'];
         $facultad = ['','Derecho', 'Ciencias Economicas Financieras Administrativas', 'Ciencias Puras','Ciencias Sociales Humanisticas', 'Ciencias de la Salud', 'Ciencias Agricolas Pecuarias',
         'Ingenieria', 'Ingenieria Minera','Ingenieria Geologica', 'Artes','Ingenieria Tecnologica', 'Medicina'];
-        $semestre =[['','Gestion Academica', 'Semestre I', 'semestre II']];
+        $semestre =['','Gestion Academica', 'Semestre I', 'semestre II'];
        
         return view('designacion.create', compact('designacion', 'gestion', 'facultad', 'semestre'));
     }

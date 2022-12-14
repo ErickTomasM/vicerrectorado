@@ -57,7 +57,8 @@
         <?php 
             
                 if ($titulare->designacion->Semestre == 'Gestion Academica') {
-                    echo '(Semestre I y Semestre II)';
+                        
+                    echo '';
                 }else {
                     if($titulare->designacion->Semestre == 'Semestre I' || 'Semestre II'){
                 echo '('.$titulare->designacion->Semestre.')';
@@ -71,7 +72,7 @@
     <ol type= "none">
 
     <li>
-        {{$titulare->estudio->Materia}}
+        {{$titulare->estudio->Sigla}} <text>___</text> {{$titulare->estudio->Materia}} <text>___</text><?php $suma = $titulare->estudio->Horast + $titulare->estudio->Horasp; echo $suma;?><text>Horas</text>
     </li>
     <li>
         {{ $titulare->materia01}}
@@ -90,16 +91,30 @@ Debiendo iniciar sus actividades a partir de la fecha. Para coordinar los horari
 aspectos inherentes a sus funciones académicas, se le solicita pasar por Dirección de Carrera. <br><br>
 Con este grato motivo, saludamos a usted con las consideraciones más distinguidas. <br> <br>
 
-Atentamente,
+Atentamente, <br>
+<br><br><br>
+<div class="footer">
+    <img src="vendor/adminlte/dist/imagen/sello.png" alt="freecodecamp-logo" width="" height=""><br>
+    DECANO a.i. <br>
+    FACULTAD DE <text  class="dos">CIENCIAS ECONOMICAS <br> FINANCIERAS ADMINISTRATIVAS</text><br><br>
+    <div align="right">
+        <img src="vendor/adminlte/dist/imagen/sello.png" alt="freecodecamp-logo" width="" height="" aling="center"><br>
+        <text> M.B.A. Victor Hugo Villegas Choquevillca</text> <br>
+            <text aling="center">VICERRECTOR U.A.T.F</text>
+        
+        
+    </div>
+    
+</div>
 
-<img src="firma.png" alt="imagen 1">
+
+
 
 </p>
     </div>
+    
         
     @endforeach
-    
-    
     
 </body>
 </html>
