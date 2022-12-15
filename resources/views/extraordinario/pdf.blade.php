@@ -14,13 +14,14 @@
 <body>
     @foreach ($extraordinarios as $extraordinario)
     <div style="page-break-after: always">
-    Potosí 
-    {{ $extraordinario->designacion->FechaDesignacion }}
+    Potosí, 
+    
     <?php
-        $anio = $extraordinario->designacion->FechaDesignacion; echo "<br>";
+        $timestap = strtotime($extraordinario->designacion->FechaDesignacion);
         
-       $a = date('Y');    
-       $t = $extraordinario->TipoDocente;     
+        setlocale(LC_TIME, "spanish");
+        echo strftime("%d de %B de %Y", $timestap);
+            
     ?>  
     
     <br>
@@ -30,16 +31,21 @@
                 {{ $extraordinario->docente->Nombres }} 
                {{ $extraordinario->docente->ApellidoPaterno }}
                {{ $extraordinario->docente->ApellidoMaterno }}<br>
-    Presente <br><br><br><br>
+    Presente.- <br><br><br><br>
     De nuestra mayor consideración:<br><br>
+    
    
     Por Resolución del Honorable Consejo Facultativo de <text  style="color:#FF0000">{{$extraordinario->designacion->Facultad}}</text>
         N° <text style="color:#FF0000"> {{ $extraordinario->designacion->Resolucion }} </text>/ {{$a = date('Y' );}},
-        nos permitimos comunicarle que omo resultado de la Convocatoria a Concurso de Méritos Para la Provisión de Docente Extraordinario para la carrera de
+        nos permitimos comunicarle que como resultado de la
+         <text style="color:#FF0000"> {{$extraordinario->Convocatoria}}</text>
+         a Concurso de Méritos Para la Provisión de Docente Extraordinario para la carrera de
          <text style="color:#FF0000">{{$extraordinario->designacion->Carrera}}</text> usted ha sido designado como
          DOCENTE <text class="dos" tyle="color:#FF0000">{{$extraordinario->TiposDocente}}</text> 
             <text tyle="color:#FF0000">{{$extraordinario->Dedicacion}}</text> 
-        por la presente gestion academica 2023
+
+            por la presente gestion academica
+             <text style="color:#FF0000"> {{$extraordinario->designacion->Gestion}}</text>
 
          en concordancia con el <text style="color:#FF0000"> Artículo 
         <?php 
@@ -85,12 +91,13 @@
     <li>{{ $extraordinario->materia03 }}</li>
     <li>{{ $extraordinario->materia04 }}</li>
     <li>{{ $extraordinario->materia05 }}</li>
+
 </ol>
 
 <br>
 
 Para coordinar horarios y otros aspectos inherentes a sus funciones académicas, se le insinúa pasar por Dirección de Carrera. <br>
-Con este grato motivo, saludamos a usted con las consideraciones más distinguidas. <br>
+Con este grato motivo, saludamos a usted con las consideraciones más distinguidas. <br><br>
 Atentamente, <br>
  <br>
 <br><br><br>

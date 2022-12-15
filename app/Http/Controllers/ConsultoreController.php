@@ -57,7 +57,7 @@ class ConsultoreController extends Controller
 
         $consultore = request()->except('_token');
         if($request->hasFile('contrato')){
-            $consultore['contrato'] = $request->file('contrato')->store('uploads', 'public');
+            $consultore['contrato'] = $request->file('contrato')->store('public');
 
         }
         Consultore::insert($consultore);
@@ -71,6 +71,7 @@ class ConsultoreController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
         $consultore = Consultore::find($id);

@@ -23,7 +23,7 @@
 
                                 </a>
                                 @endcan
-                                <a href="{{ route('extraordinarios.pdf') }}" class="btn btn-ligth btn-sm float-right"  data-placement="left" >
+                                <a href="{{ route('extraordinarios.pdf') }}" class="btn btn-ligth btn-sm float-right"  data-placement="right" target="blank_" >
                                     
                                     <i class='fas fa-file-pdf' style='font-size:30px;color:red'></i>
                                     <!-- <i class="fa-file-pdf-o" style="color:#111010;"  width="8" height="8"></i> //-->

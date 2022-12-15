@@ -69,5 +69,5 @@
             </div>
         </div>
     </section>
-    <img src="img/firma.png" alt="">
+    
 @endsection

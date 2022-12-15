@@ -15,13 +15,13 @@
 <body>
     @foreach ($titulares as $titulare)
     <div style="page-break-after: always">
-    Potosí 
-    {{ $titulare->designacion->FechaDesignacion }}
+    Potosí,
+    
     <?php
-        $anio = $titulare->designacion->FechaDesignacion; echo "<br>";
+        $timestap = strtotime($titulare->designacion->FechaDesignacion);
         
-       $a = date('Y');    
-       $t = $titulare->TipoDocente;     
+        setlocale(LC_TIME, "spanish");
+        echo strftime("%d de %B de %Y", $timestap);     
     ?>  
     
     <br>
