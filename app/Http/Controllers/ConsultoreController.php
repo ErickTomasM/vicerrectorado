@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Storage;
 
 use App\Models\Consultore;
 use Illuminate\Http\Request;
@@ -57,7 +58,10 @@ class ConsultoreController extends Controller
 
         $consultore = request()->except('_token');
         if($request->hasFile('contrato')){
-            $consultore['contrato'] = $request->file('contrato')->store('public');
+            
+            $consultore ['contrato'] = Storage::disk('public')->get('');
+            $consultore['contrato'] = $request->file('contrato')->store('uploads');
+            
 
         }
         Consultore::insert($consultore);

@@ -55,6 +55,6 @@
 
     </div>
     <div class="form-group">
-        <button type="submit" class="btn btn-primary" value="{{$consultore->contrato}}">Submit</button>
+        <button type="submit" class="btn btn-danger" value="{{$consultore->contrato}}">Submit</button>
     </div>
 </div>
