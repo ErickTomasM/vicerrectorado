@@ -68,7 +68,7 @@
 											<td>{{ $consultore->materiaC04 }}</td>
 											<td>{{ $consultore->materiaC05 }}</td>
 											<td>{{ $consultore->Dedicacion }}</td>
-											<td><a class="btn btn-info" href="{{$consultore->contrato}}">ver</a></td>
+											<td><a class="btn btn-info" href="/storage/{{$consultore->contrato}}">ver</a></td>
 
                                             <td>
                                                 <form action="{{ route('consultores.destroy',$consultore->id) }}" method="POST">

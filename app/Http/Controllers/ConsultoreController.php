@@ -59,8 +59,9 @@ class ConsultoreController extends Controller
         $consultore = request()->except('_token');
         if($request->hasFile('contrato')){
             
-            $consultore ['contrato'] = Storage::disk('public')->get('');
-            $consultore['contrato'] = $request->file('contrato')->store('uploads');
+            //$consultore ['contrato'] = Storage::disk('public')->get('');
+            //$file = Storage::disk('public')->get($consultore);
+            $consultore['contrato'] = $request->file('contrato')->store('pubilc');
             
 
         }
