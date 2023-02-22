@@ -8,6 +8,7 @@
 
 @section('content')
     <p>Adjuntar Manual de Usuario.</p>
+    <i class="fa fa-fw fa-edit"></i>
 @stop
 
 @section('css')

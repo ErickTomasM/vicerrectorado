@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 
 @section('template_title')
     Create Docente
@@ -20,7 +20,9 @@
                             @csrf
 
                             @include('docente.form')
-
+                            @foreach ($user->posts as $post)
+                                <li>{{ $prueba->Materia}}</li>
+                            @endforeach
                         </form>
                     </div>
                 </div>

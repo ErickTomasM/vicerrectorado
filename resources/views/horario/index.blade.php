@@ -34,38 +34,31 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        
-										<th>Docente Id</th>
-										<th>Infraestructura Id</th>
-										<th>Dia</th>
-										<th>Turno</th>
-										<th>Hora</th>
-
+                                        <th>N°</th>
+                                        <th>Nombres</th>
+										<th>Asignar</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($horarios as $horario)
+                                   
+                                    @foreach ($docentes as $docente)
+                                        
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $horario->docente_id }}</td>
-											<td>{{ $horario->infraestructura_id }}</td>
-											<td>{{ $horario->Dia }}</td>
-											<td>{{ $horario->Turno }}</td>
-											<td>{{ $horario->Hora }}</td>
-
+                                            <td> {{ ++$i }}</td>
+											<td>{{ $docente->Nombres}}
+                                                {{ $docente->ApellidoPaterno }}
+                                                {{ $docente->ApellidoMaterno }}
+                                            </td>
                                             <td>
-                                                <form action="{{ route('horarios.destroy',$horario->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('horarios.show',$horario->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('horarios.edit',$horario->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
-                                                </form>
+                                                
+                                                @foreach ($horarios as $horario)
+                                                @csrf
+                                                <a class="btn btn-sm btn-primary " href="{{ route('horarios.show',$horario->id) }}"><i class="fa fa-fw fa-eye"></i> Asignar</a>   
+                                                @endforeach
                                             </td>
                                         </tr>
+                                       
                                     @endforeach
                                 </tbody>
                             </table>

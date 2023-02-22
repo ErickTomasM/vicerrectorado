@@ -19,7 +19,6 @@ class DesignacionController extends Controller
     public function index()
     {
         $designacions = Designacion::paginate();
-
         return view('designacion.index', compact('designacions'))
             ->with('i', (request()->input('page', 1) - 1) * $designacions->perPage());
     }

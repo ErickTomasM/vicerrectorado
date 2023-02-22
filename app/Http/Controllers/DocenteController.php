@@ -49,7 +49,6 @@ class DocenteController extends Controller
         request()->validate(Docente::$rules);
 
         $docente = Docente::create($request->all());
-
         return redirect()->route('docentes.index')
             ->with('success', 'Docente created successfully.');
     }

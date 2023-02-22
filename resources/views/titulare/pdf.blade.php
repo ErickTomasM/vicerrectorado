@@ -75,7 +75,7 @@
         {{$titulare->estudio->Sigla}} <text>___</text> {{$titulare->estudio->Materia}} <text>___</text><?php $suma = $titulare->estudio->Horast + $titulare->estudio->Horasp; echo $suma;?><text>Horas</text>
     </li>
     <li>
-        {{ $titulare->materia01}}
+        {{$titulare->estudio->Sigla}} <text>___</text> {{$titulare->estudio->Materia}} <text>___</text><?php $suma = $titulare->estudio->Horast + $titulare->estudio->Horasp; echo $suma;?><text>Horas</text>
         
     </li>
     

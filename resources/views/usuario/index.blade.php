@@ -18,7 +18,7 @@
 
         <thead>
             <tr>
-                <th>ID</th>
+                <th>N°</th>
                 <th>Nombre</th>
                 <th>Correo Electronico</th>
                 <th></th>

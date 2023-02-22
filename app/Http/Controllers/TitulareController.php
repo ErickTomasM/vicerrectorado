@@ -24,6 +24,11 @@ class TitulareController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function materias($id){
+        $docente = Docente::with('prueba')->find($id);
+        return view('titulare.create', compact('docente'));
+
+    }
     public function index()
     {
         $titulares = Titulare::paginate(10);

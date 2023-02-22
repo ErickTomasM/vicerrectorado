@@ -11,19 +11,22 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Horario</span>
+                            <span class="card-title">Horario</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('horarios.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('horarios.index') }}"> regresar</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Docente Id:</strong>
-                            {{ $horario->docente_id }}
+                            <strong>Nombres:</strong>
+                            {{ $docentes }}
                         </div>
+                        
+                        <?php 
+                        /*
                         <div class="form-group">
                             <strong>Infraestructura Id:</strong>
                             {{ $horario->infraestructura_id }}
@@ -39,7 +42,8 @@
                         <div class="form-group">
                             <strong>Hora:</strong>
                             {{ $horario->Hora }}
-                        </div>
+                        </div>*/
+                        ?>
 
                     </div>
                 </div>

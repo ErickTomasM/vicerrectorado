@@ -1,5 +1,4 @@
-
-@extends('adminlte::page')
+@extends('layouts.app')
 
 @section('template_title')
     Docente
@@ -18,27 +17,19 @@
                             </span>
 
                              <div class="float-right">
-                                @can('docentes.create')
-                                    <a href="{{ route('docentes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                    {{ __('Create New') }}
-                                     </a>
-                                @endcan
-                                
+                                <a href="{{ route('docentes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                  {{ __('Nuevo') }}
+                                </a>
                               </div>
-                              
-                                
-                              
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
                         <div class="alert alert-success">
                             <p>{{ $message }}</p>
-                            
                         </div>
                     @endif
 
                     <div class="card-body">
-                    <input wire:model="buscar" type="text" class="form-control" placeholder="buscar">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
@@ -50,6 +41,13 @@
 										<th>Apellidomaterno</th>
 										<th>Ci</th>
 										<th>Telefono</th>
+										<th>Cargo</th>
+										<th>Direccion</th>
+										<th>Genero</th>
+										<th>Nacionalidad</th>
+										<th>Estadocivil</th>
+										<th>Fechanacimiento</th>
+										<th>Correoelectronico</th>
 										<th>Titulo</th>
 
                                         <th></th>
@@ -65,27 +63,32 @@
 											<td>{{ $docente->ApellidoMaterno }}</td>
 											<td>{{ $docente->ci }}</td>
 											<td>{{ $docente->Telefono }}</td>
+											<td>{{ $docente->Cargo }}</td>
+											<td>{{ $docente->Direccion }}</td>
+											<td>{{ $docente->Genero }}</td>
+											<td>{{ $docente->Nacionalidad }}</td>
+											<td>{{ $docente->EstadoCivil }}</td>
+											<td>{{ $docente->FechaNacimiento }}</td>
+											<td>{{ $docente->CorreoElectronico }}</td>
 											<td>{{ $docente->Titulo }}</td>
 
                                             <td>
                                                 <form action="{{ route('docentes.destroy',$docente->id) }}" method="POST">
-                                                    @can('docentes.show')
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('docentes.show',$docente->id) }}"><i class="fa fa-fw fa-eye"></i> ver</a>
-                                                    @endcan
-                                                    @can('docentes.edit')
-                                                    <a class="btn btn-sm btn-success" href="{{ route('docentes.edit',$docente->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
-                                                    @endcan
+                                                   <?php 
+                                                   //<a class="btn btn-sm btn-primary " href="{{ route('docentes.show',$docente->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    ?>
                                                     
+                                                    <a class="btn btn-sm btn-success" href="{{ route('docentes.edit',$docente->id) }}"><i class="bi bi-pencil-square"></i> Editar </a>
+        
                                                     @csrf
                                                     @method('DELETE')
-                                                    @can('docentes.delete')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
-                                                    @endcan
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i>Eliminar</button>
+                                                    
                                                 </form>
+                                               
                                             </td>
                                         </tr>
                                     @endforeach
-                                    
                                 </tbody>
                             </table>
                         </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Horario;
 use Illuminate\Http\Request;
+use App\Models\Docente;
 
 /**
  * Class HorarioController
@@ -18,11 +19,16 @@ class HorarioController extends Controller
      */
     public function index()
     {
+        /*
         $horarios = Horario::paginate();
-
         return view('horario.index', compact('horarios'))
             ->with('i', (request()->input('page', 1) - 1) * $horarios->perPage());
-    }
+        */
+        $horarios = Horario::paginate();
+        $docentes = Docente::all();
+        return view('horario.index', compact('horarios', 'docentes'))
+         ->with('i', (request()->input('page', 1) -1) * $horarios->perPage());
+        }
 
     /**
      * Show the form for creating a new resource.
@@ -60,8 +66,9 @@ class HorarioController extends Controller
     public function show($id)
     {
         $horario = Horario::find($id);
+        $docentes = Docente::find($id);
 
-        return view('horario.show', compact('horario'));
+        return view('horario.show', compact('horario', 'docentes'));
     }
 
     /**

@@ -13,12 +13,21 @@ use Illuminate\Database\Eloquent\Model;
  * @property $ApellidoMaterno
  * @property $ci
  * @property $Telefono
+ * @property $Cargo
+ * @property $Direccion
+ * @property $Genero
+ * @property $Nacionalidad
+ * @property $EstadoCivil
+ * @property $FechaNacimiento
+ * @property $CorreoElectronico
  * @property $Titulo
  * @property $created_at
  * @property $updated_at
  *
- * @property Designacion[] $designacions
+ * @property Consultore[] $consultores
+ * @property Extraordinario[] $extraordinarios
  * @property Horario[] $horarios
+ * @property Titulare[] $titulares
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -31,6 +40,13 @@ class Docente extends Model
 		'ApellidoMaterno' => 'required',
 		'ci' => 'required',
 		'Telefono' => 'required',
+		'Cargo' => 'required',
+		'Direccion' => 'required',
+		'Genero' => 'required',
+		'Nacionalidad' => 'required',
+		'EstadoCivil' => 'required',
+		'FechaNacimiento' => 'required',
+		'CorreoElectronico' => 'required',
 		'Titulo' => 'required',
     ];
 
@@ -41,15 +57,23 @@ class Docente extends Model
      *
      * @var array
      */
-    protected $fillable = ['Nombres','ApellidoPaterno','ApellidoMaterno','ci','Telefono','Titulo'];
+    protected $fillable = ['Nombres','ApellidoPaterno','ApellidoMaterno','ci','Telefono','Cargo','Direccion','Genero','Nacionalidad','EstadoCivil','FechaNacimiento','CorreoElectronico','Titulo'];
 
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function designacions()
+    public function consultores()
     {
-        return $this->hasMany('App\Models\Designacion', 'docente_id', 'id');
+        return $this->hasMany('App\Models\Consultore', 'docente_id', 'id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function extraordinarios()
+    {
+        return $this->hasMany('App\Models\Extraordinario', 'docente_id', 'id');
     }
     
     /**
@@ -60,5 +84,16 @@ class Docente extends Model
         return $this->hasMany('App\Models\Horario', 'docente_id', 'id');
     }
     
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function titulares()
+    {
+        return $this->hasMany('App\Models\Titulare', 'docente_id', 'id');
+    }
+    
+    public function prueba() {
+        return $this->hasMany('App\Estudios');
+    }
 
 }

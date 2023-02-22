@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 
 @section('template_title')
     {{ $docente->name ?? 'Show Docente' }}
@@ -39,6 +39,34 @@
                         <div class="form-group">
                             <strong>Telefono:</strong>
                             {{ $docente->Telefono }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Cargo:</strong>
+                            {{ $docente->Cargo }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Direccion:</strong>
+                            {{ $docente->Direccion }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Genero:</strong>
+                            {{ $docente->Genero }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Nacionalidad:</strong>
+                            {{ $docente->Nacionalidad }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Estadocivil:</strong>
+                            {{ $docente->EstadoCivil }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Fechanacimiento:</strong>
+                            {{ $docente->FechaNacimiento }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Correoelectronico:</strong>
+                            {{ $docente->CorreoElectronico }}
                         </div>
                         <div class="form-group">
                             <strong>Titulo:</strong>

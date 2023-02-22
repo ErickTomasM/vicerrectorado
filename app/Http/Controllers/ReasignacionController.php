@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Reasignacion;
 use Illuminate\Http\Request;
+use App\Models\Designacion;
+
 
 /**
  * Class ReasignacionController
@@ -18,10 +20,12 @@ class ReasignacionController extends Controller
      */
     public function index()
     {
-        $reasignacions = Reasignacion::paginate();
+       //$reasignacions = Reasignacion::paginate();
+        $prueba = Reasignacion::all();
+        return view('reasignacion.index', ['pruba' => $prueba->toArray()]);
 
-        return view('reasignacion.index', compact('reasignacions'))
-            ->with('i', (request()->input('page', 1) - 1) * $reasignacions->perPage());
+       /* return view('reasignacion.index', compact('reasignacions'))
+            ->with('i', (request()->input('page', 1) - 1) * $reasignacions->perPage());*/
     }
 
     /**
